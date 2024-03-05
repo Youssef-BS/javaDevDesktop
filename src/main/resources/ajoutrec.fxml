@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="507.0" prefWidth="684.0" stylesheets="@../../../target/classes/css/ajouter.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ajouterController">
+   <children>
+      <AnchorPane layoutY="-6.0" prefHeight="518.0" prefWidth="281.0" style="-fx-background-color: #00334E;">
+         <children>
+            <PieChart fx:id="pieChart" layoutX="29.0" layoutY="28.0" prefHeight="150.0" prefWidth="157.0" />
+            <ImageView fitHeight="150.0" fitWidth="19.0" layoutX="195.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="145.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@red.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="67.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@yellow.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="181.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@orange.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="39.0" layoutY="218.0" text="livreur" textFill="#fffcfc" />
+            <Label layoutX="108.0" layoutY="218.0" text="sécurité" textFill="#fffcfc" />
+            <Label layoutX="178.0" layoutY="218.0" prefHeight="18.0" prefWidth="43.0" text="service" textFill="#fffcfc" />
+            <Label layoutX="141.0" layoutY="266.0" text="colis" textFill="#fffcfc" />
+            <Label layoutX="63.0" layoutY="266.0" text="produit" textFill="#fffcfc" />
+            <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="110.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@blue.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="39.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@green.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="22.0" layoutY="6.0" prefHeight="18.0" prefWidth="226.0" text="Statistique des types de réclamations" textFill="WHITE" />
+            <VBox layoutX="17.0" layoutY="347.0" prefHeight="150.0" prefWidth="250.0">
+               <children>
+                  <TextArea fx:id="chatArea" prefHeight="206.0" prefWidth="211.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="userInputField" onAction="#onSendMessage" prefHeight="27.0" prefWidth="185.0" promptText="ecrire quelque chose ici" />
+                        <Button mnemonicParsing="false" onAction="#onSendMessage" prefHeight="27.0" prefWidth="78.0" text="envoyer" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Text fill="WHITE" layoutX="80.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parler avec notre bot " wrappingWidth="156.86016845703125" />
+            <ImageView fitHeight="36.0" fitWidth="52.0" layoutX="29.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ChatBot.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="321.0" layoutY="14.0" prefHeight="46.0" prefWidth="290.0" style="-fx-alignment: center;" text="Gerer reclamation" textFill="#0a6476">
+         <font>
+            <Font name="Goudy Old Style Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="409.0" layoutY="71.0" text="Titre Du Reclamation">
+         <font>
+            <Font name="Goudy Old Style Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="titreTF" layoutX="392.0" layoutY="97.0" prefHeight="26.0" prefWidth="175.0" promptText="titre" style="-fx-background-radius: 50px; -fx-border-style: none;" />
+      <Label layoutX="410.0" layoutY="134.0" text="Type De Reclamation">
+         <font>
+            <Font name="Goudy Old Style Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="typeTF" layoutX="392.0" layoutY="163.0" prefHeight="26.0" prefWidth="176.0" style="-fx-background-radius: 50px; -fx-background-color: #145374; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" />
+      <Label layoutX="410.0" layoutY="198.0" text="Description">
+         <font>
+            <Font name="Goudy Old Style Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="descriptionTF" layoutX="349.0" layoutY="216.0" prefHeight="74.0" prefWidth="261.0" promptText="description" style="-fx-background-radius: 20px;" />
+      <Label layoutX="409.0" layoutY="297.0" text="Date de reclamation">
+         <font>
+            <Font name="Goudy Old Style Bold" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateTF" layoutX="348.0" layoutY="322.0" prefHeight="26.0" prefWidth="262.0" style="-fx-background-radius: 50px;" />
+      <Label layoutX="436.0" layoutY="348.0" text="ID user">
+         <font>
+            <Font name="Goudy Old Style Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="idUserComboBox" layoutX="370.0" layoutY="366.0" prefHeight="26.0" prefWidth="176.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #145374; -fx-background-radius: 50px;" />
+      <Button layoutX="505.0" layoutY="445.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="42.0" prefWidth="120.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="Ajouter" />
+      <Button layoutX="316.0" layoutY="445.0" mnemonicParsing="false" onAction="#afficherrec" prefHeight="42.0" prefWidth="120.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="afficher" />
+   </children>
+</AnchorPane>

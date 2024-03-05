@@ -1,0 +1,214 @@
+.button
+{
+    -fx-background-color : #05071F;
+    -fx-text-fill : #e7e5e5;
+}
+.button:hover{
+    -fx-background-color : #10165F;
+}
+.button:pressed
+{
+    -fx-background-color : #1620A1;
+}
+
+.scroll-pane {
+    -fx-background-color: #02030A;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #10165F;
+    -fx-background-radius: 5em;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: black;
+}
+
+.items-box{
+    -fx-spacing: 15px;
+}
+
+.table-view {
+    -fx-background-color: #f5f5f5;
+}
+.table-row-cell {
+    -fx-background-color: #ffffff;
+}
+.table-row-cell:odd {
+    -fx-background-color: #f0f0f0;
+}
+.table-column {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.button:focused {
+    -fx-translate-x: 20px;
+}
+
+
+.fetch-user-button , .delete-button{
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+/* Style for TableView */
+.table-view {
+    -fx-background-color: #E0E3E5; /* Background color */
+}
+
+/* Style for table header */
+.table-view .column-header-background {
+    -fx-background-color: #E0E3E5; /* Header background color */
+}
+
+/* Style for table columns */
+.table-view .column-header,
+.table-view .filler {
+    -fx-border-color: #999999; /* Column separator color */
+    -fx-border-width: 0 0 1 0; /* Border width (bottom only) */
+    -fx-border-style: solid;
+    -fx-background-color: #C9CFD3;
+}
+
+/* Style for alternating row colors */
+.table-row-cell:odd {
+    -fx-background-color: #F0F0F0; /* Alternate row background color */
+}
+
+/* Style for selected rows */
+.table-row-cell:selected {
+    -fx-background-color: #AAB0B3; /* Selected row background color */
+}
+
+/* Style for hover effect */
+.table-row-cell:hover {
+    -fx-background-color: #C9CFD3; /* Hover row background color */
+}
+.form_container{
+    -fx-background-color: #E8E8E8;
+}
+.form_container Text{
+    -fx-font-size: 1.2em;
+    -fx-fill: #888888;
+}
+.form_container VBox{
+    -fx-background-color: #145374;
+
+    -fx-padding: 10;
+    -fx-spacing: 30;
+}
+.anchorTABLE{
+    -fx-background-color: #fff;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 1, 1, 1,1);
+    -fx-background-radius: 5px;
+}
+
+.form_container TextField{
+    -fx-pref-height: 250;
+    -fx-pref-height: 35;
+    -fx-background-color: #FFFFFF;
+    -fx-font-size: 1.2em;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0,3);
+}
+
+.form_container DatePicker{
+    -fx-pref-height: 250;
+    -fx-pref-height: 35;
+    -fx-background-color: #FFFFFF;
+    -fx-font-size: 1.2em;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0,3);
+}
+.form_container Button{
+    -fx-background-color: #5588A3;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0,3);
+    /*-fx-pref-width: 100;*/
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Calibri Light";
+    -fx-fill: #FFFFFF;
+}
+.form_container Button:hover{
+    -fx-cursor: hand;
+}
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #5588A3;
+}
+.table-column {
+    -fx-font-size: 14px;
+    -fx-text-fill: #413f3f;
+    -fx-padding: 5px;
+    /*-fx-background-color: ;*/
+}
+.table-view .column-header {
+    -fx-background-color: #5588A3; /* Background color */
+    -fx-text-fill: white; /* Text color */
+}
+.form_container ComboBox{
+    -fx-pref-height: 250;
+    -fx-pref-height: 35;
+    -fx-background-color: #FFFFFF;
+    -fx-font-size: 1.2em;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0,3);
+}
+.table-cell {
+    -fx-padding: 5px;
+
+}
+.card{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5),5,0,0,0);
+}
+.card:hover{
+    -fx-background-color: #e1e1e1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5),8,0,0,0);
+}
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5),5,0,0,0);
+}
+.btn {
+    -fx-background-color: #4296cb;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0,3);
+    /*-fx-pref-width: 100;*/
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Calibri Light";
+    -fx-fill: #FFFFFF;
+}
+.btn:hover{
+    -fx-cursor: hand;
+}
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+.underlined-text {
+
+}
+.btnBar{
+    -fx-background-color: #316183;
+    -fx-border-radius: 30px;
+    -fx-fill: white ;
+    -fx-font-family: Calibri;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0,3);
+}
+.btnBar:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #3d749b;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5),5,0,0,0);
+}

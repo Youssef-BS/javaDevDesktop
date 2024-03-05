@@ -1,0 +1,66 @@
+/* Pour le TableView */
+#tableView {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #f4f4f4;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: white;
+}
+
+.table-row-cell {
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+/* Classe à utiliser pour la première ligne dans le code Java */
+.first-row {
+    -fx-background-color: red; /* Rouge tomate */
+}
+
+/* Pour les en-têtes de colonne */
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+
+.table-view .column-header-background .label {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: blue;
+}
+
+/* Pour les boutons */
+.button {
+    -fx-background-color: #145374;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+}
+
+.button:hover {
+    -fx-background-color: #84C9EC;
+}
+
+/* Pour les champs de saisie */
+
+/* Pour les ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+#titreTF {
+    -fx-border-style: solid solid none solid;
+    -fx-border-width: 5;
+    /*-fx-border-color: red;*/ /* Décommentez et changez la couleur au besoin */
+}

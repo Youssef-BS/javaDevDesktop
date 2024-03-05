@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="productItem" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="entities.ProductItemController">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints maxWidth="300.0" minWidth="10.0" prefWidth="300.0" />
+     
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="300.0" minHeight="200.0" prefHeight="300.0" />
+   </rowConstraints>
+   <children>
+      <BorderPane fx:id="item" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1">
+         <center>
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+         </center>
+         <top>
+            <Label fx:id="nameLabel" alignment="CENTER" prefHeight="60.0" prefWidth="283.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #d7c49eff;" text="Label" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <Label fx:id="priceLabel" alignment="CENTER" prefHeight="59.0" prefWidth="97.0" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #d7c49eff;" text="Label" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <graphic>
+                  <Label text="Price:" textFill="#d7c49e">
+                     <font>
+                        <Font size="11.5" />
+                     </font>
+                  </Label>
+               </graphic></Label>
+         </bottom>
+         <stylesheets>
+            <URL value="@card.css" />
+            <URL value="@item.css" />
+         </stylesheets>
+      </BorderPane>
+   </children>
+</GridPane>

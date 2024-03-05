@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.Double?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="601.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CrudUsersControllors">
+   <children>
+      <AnchorPane prefHeight="642.0" prefWidth="318.0" style="-fx-background-color: #112D4E;">
+         <children>
+            <ImageView fitHeight="73.0" fitWidth="67.0" layoutX="116.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/img.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="112.0" layoutY="116.0" text="Admin" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            <Pane layoutX="37.0" layoutY="169.0" prefHeight="379.0" prefWidth="244.0" style="-fx-background-color: #7387A8; -fx-border-radius: 50px; -fx-background-radius: 50px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+               <children>
+                  <Button fx:id="btnOverview" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="30.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="185.0" style="-fx-background-color: #112D4E; -fx-background-radius: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" stylesheets="@style.css" text="Main">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_Home_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe Print Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnCustomers" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="30.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="185.0" style="-fx-background-color: #112D4E; -fx-background-radius: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="add user">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_Person_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@style.css" />
+                        <URL value="@style.css" />
+                     </stylesheets>
+                     <font>
+                        <Font name="Segoe Print Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnMenus" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="29.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #112D4E; -fx-background-radius: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" stylesheets="@style.css" text="List Users">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_Xbox_Menu_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe Print Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSettings" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="29.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #112D4E; -fx-background-radius: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" stylesheets="@style.css" text="Settings">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_Slider__32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe Print Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSignout" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="29.0" layoutY="294.0" mnemonicParsing="false" onAction="#logout" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #112D4E; -fx-background-radius: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" stylesheets="@style.css" text="Sign Out">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_Sign_Out_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe Print Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnMenuSubs" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="29.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #112D4E; -fx-background-radius: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" stylesheets="@style.css" text="List Subcribes">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_Xbox_Menu_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe Print Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tableUsers" layoutX="309.0" layoutY="14.0" prefHeight="590.0" prefWidth="778.0" visible="false">
+         <children>
+<!--            <Pane layoutX="9.0" layoutY="170.0" prefHeight="351.0" prefWidth="765.0" style="-fx-background-color: #186F65;">-->
+<!--               <children>-->
+<!--                  <TableView fx:id="tableView" layoutX="-4.0" prefHeight="358.0" prefWidth="778.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;">-->
+<!--                     <columns>-->
+<!--                        <TableColumn fx:id="idColumn" prefWidth="46.4" text="ID" />-->
+<!--                        <TableColumn fx:id="firstNameColumn" prefWidth="84.8" text="First Name" />-->
+<!--                        <TableColumn fx:id="lastNameColumn" prefWidth="69.6" text="Last Name" />-->
+<!--                        <TableColumn fx:id="photoColumn" prefWidth="76.79998779296875" text="Photo" />-->
+<!--                        <TableColumn fx:id="ageColumn" prefWidth="87.199951171875" text="Age" />-->
+<!--                        <TableColumn fx:id="emailColumn" prefWidth="100.800048828125" text="Email" />-->
+<!--                        <TableColumn fx:id="passwordColumn" prefWidth="80.800048828125" text="Password" />-->
+<!--                        <TableColumn fx:id="phoneColumn" prefWidth="76.79998779296875" text="Phone" />-->
+<!--                        <TableColumn fx:id="adminColumn" prefWidth="77.60003662109375" text="Admin" />-->
+<!--                        <TableColumn fx:id="coachColumn" prefWidth="75.20001220703125" text="Coach" />-->
+<!--                     </columns>-->
+<!--                  </TableView>-->
+<!--               </children>-->
+<!--            </Pane>-->
+            <Label fx:id="welcome" layoutX="89.0" layoutY="29.0" styleClass="dashboard-label" text="Welcome master Admin">
+               <font>
+                  <Font name="Segoe Print Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="507.0" layoutY="97.0" prefHeight="27.0" prefWidth="183.0" promptText="Search" styleClass="search-field" />
+            <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="691.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_Search_52px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="addUser" layoutX="316.0" prefHeight="636.0" prefWidth="799.0" style="-fx-background-color: #DBE2EF; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" visible="false">
+         <children>
+            <Pane fx:id="pnlCustome" layoutX="144.0" layoutY="142.0" minHeight="214.0" prefHeight="403.0" prefWidth="494.0" style="-fx-background-color: #112D4E; -fx-min-width: 300px; -fx-min-height: 150px; -fx-alignment: center; -fx-background-radius: 18px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+               <children>
+                  <TextField fx:id="fistnameFx" layoutX="30.0" layoutY="52.0" prefHeight="36.0" prefWidth="190.0" promptText="firstname" style="-fx-background-radius: 5px;" />
+                  <TextField fx:id="lastNameFx" layoutX="258.0" layoutY="52.0" prefHeight="36.0" prefWidth="190.0" promptText="lastname" style="-fx-background-radius: 5px;" />
+                  <TextField fx:id="emailFx" layoutX="30.0" layoutY="115.0" prefHeight="36.0" prefWidth="190.0" promptText="email" style="-fx-background-radius: 5px;" />
+                  <TextField fx:id="isAdminFx" layoutX="30.0" layoutY="171.0" prefHeight="36.0" prefWidth="190.0" promptText="isadmin" style="-fx-background-radius: 5px;" />
+                  <TextField fx:id="isCoachFx" layoutX="30.0" layoutY="233.0" prefHeight="36.0" prefWidth="190.0" promptText="iscoach" style="-fx-background-radius: 5px;" />
+                  <TextField fx:id="passwordFx" layoutX="258.0" layoutY="115.0" prefHeight="36.0" prefWidth="190.0" promptText="password" style="-fx-background-radius: 5px;" />
+                  <Label layoutX="26.0" layoutY="30.0" text="first name :" textFill="WHITE" />
+                  <Label layoutX="21.0" layoutY="301.0" text="photo :" textFill="WHITE" />
+                  <Label layoutX="250.0" layoutY="214.0" text="phone :" textFill="WHITE" />
+                  <Label layoutX="255.0" layoutY="91.0" text="password :" textFill="WHITE" />
+                  <Label layoutX="17.0" layoutY="214.0" text="isCoach :" textFill="WHITE" />
+                  <Label layoutX="16.0" layoutY="154.0" text="isAdmin :" textFill="WHITE" />
+                  <Label layoutX="23.0" layoutY="91.0" text="email :" textFill="WHITE" />
+                  <Label layoutX="255.0" layoutY="30.0" text="last name :" textFill="WHITE" />
+                  <TextField fx:id="ageFx" layoutX="258.0" layoutY="171.0" prefHeight="36.0" prefWidth="190.0" promptText="age" style="-fx-background-radius: 5px;" />
+                  <Label layoutX="257.0" layoutY="154.0" text="age :" textFill="WHITE" />
+                  <Button fx:id="upload" layoutX="93.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleUploadButton" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #112D4E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="upload" textFill="WHITE" />
+                  <ImageView fx:id="photoImageView" fitHeight="73.0" fitWidth="81.0" layoutX="85.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextField fx:id="phoneFx" layoutX="258.0" layoutY="233.0" prefHeight="36.0" prefWidth="190.0" promptText="phone" style="-fx-background-radius: 5px;" />
+                  <Button fx:id="emptyInputs" layoutX="362.0" layoutY="365.0" onAction="#emptyInputs" style="-fx-background-radius: 50px; -fx-background-color: #112D4E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Empty Inputs" textFill="WHITE" />
+                  <Button fx:id="updateUser" layoutX="270.0" layoutY="365.0" onAction="#updateUser" style="-fx-background-radius: 50px; -fx-background-color: #112D4E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="update User" textFill="WHITE" />
+                  <Button fx:id="saveUserButton" layoutX="186.0" layoutY="365.0" onAction="#addUser" style="-fx-background-radius: 50px; -fx-background-color: #112D4E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Save User" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Label layoutX="352.0" layoutY="32.0" prefHeight="64.0" prefWidth="94.0" styleClass="dashboard-label" text="User " textAlignment="CENTER">
+               <font>
+                  <Font name="Gadugi Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" fx:id="statisctic" layoutX="316.0" prefHeight="642.0" prefWidth="799.0" style="-fx-background-color: #DBE2EF;" stylesheets="@../../../../../MATERIAL_DASHBOARD_IN_JAVA_AND_JAVAFX_USING_NETBEANS_WITH_SOURCE_CODE/material-dashboard-fx-master/src/dashboard/custom.css">
+         <children>
+            <Label layoutX="19.0" layoutY="17.0" prefHeight="30.0" prefWidth="83.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: black;" text="Statistic" textFill="WHITE" />
+            <VBox layoutX="19.0" layoutY="87.0" prefHeight="506.0" prefWidth="778.0" spacing="50.0">
+               <children>
+                  <HBox prefHeight="128.0" prefWidth="1164.0" spacing="16.0">
+                     <children>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+                           <children>
+                              <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #112D4E;" />
+                              <VBox layoutX="106.0" layoutY="17.0">
+                                 <children>
+                                    <Label prefHeight="36.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="programs" />
+                                    <Label prefHeight="27.0" prefWidth="106.0" style="-fx-font-size: 20; -fx-font-weight: BOLD;" text="1,414" />
+                                 </children>
+                              </VBox>
+                              <Button fx:id="p" onAction="#switchProgram" layoutX="106.0" layoutY="83.0" mnemonicParsing="false" style="-fx-background-radius: 50px; -fx-background-color: #112D4E;" text="select" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+                           <children>
+                              <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #112D4E;" />
+                              <VBox layoutX="106.0" layoutY="17.0">
+                                 <children>
+                                    <Label prefHeight="36.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Gyms" />
+                                    <Label prefHeight="30.0" prefWidth="123.0" style="-fx-font-size: 20; -fx-font-weight: BOLD;" text="410" />
+                                 </children>
+                              </VBox>
+                              <Button fx:id="g" layoutX="106.0" layoutY="83.0" mnemonicParsing="false" style="-fx-background-radius: 50px; -fx-background-color: #112D4E;" text="select" textFill="WHITE" onAction="#switchGym"/>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+                           <children>
+                              <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #112D4E;" />
+                              <VBox layoutX="106.0" layoutY="17.0">
+                                 <children>
+                                    <Label prefHeight="36.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Products" />
+                                    <Label prefHeight="27.0" prefWidth="106.0" style="-fx-font-size: 20; -fx-font-weight: BOLD;" text="13,897" />
+                                 </children>
+                              </VBox>
+                              <Button fx:id="pr" onAction="#switchProduct" layoutX="117.0" layoutY="83.0" mnemonicParsing="false" style="-fx-background-radius: 50px; -fx-background-color: #112D4E;" text="select" textFill="WHITE"  />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+                           <children>
+                              <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #112D4E;" />
+                              <VBox layoutX="106.0" layoutY="17.0">
+                                 <children>
+                                    <Label prefHeight="36.0" prefWidth="76.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Reclamation" />
+                                    <Label prefHeight="27.0" prefWidth="106.0" style="-fx-font-size: 20; -fx-font-weight: BOLD;" text="93,688" />
+                                 </children>
+                              </VBox>
+                              <Button fx:id="r" onAction="#switchReclamation" layoutX="117.0" layoutY="83.0" mnemonicParsing="false" style="-fx-background-radius: 50px; -fx-background-color: #112D4E;" text="select" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="128.0" prefWidth="1164.0" spacing="16.0">
+                     <children>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: #00C0EF; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+                           <children>
+                              <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #112D4E;" />
+                              <VBox layoutX="91.0" prefHeight="128.0" prefWidth="94.0" spacing="10.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <VBox prefHeight="54.0" prefWidth="155.0">
+                                       <children>
+                                          <Label prefHeight="27.0" prefWidth="155.0" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: black;" text="Coach">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label prefHeight="27.0" prefWidth="155.0" text="150">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font></Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </VBox>
+                                    <ProgressBar minHeight="-Infinity" opacity="0.78" prefHeight="7.0" prefWidth="91.0" progress="0.54" style="-fx-background-color: black;" styleClass="custom-progress-bar" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: #00A65A; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+                           <children>
+                              <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #112D4E;" />
+                              <VBox layoutX="91.0" prefHeight="128.0" prefWidth="94.0" spacing="10.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <VBox prefHeight="54.0" prefWidth="155.0">
+                                       <children>
+                                          <Label prefHeight="27.0" prefWidth="83.0" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: black;" text="promrams">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label prefHeight="27.0" prefWidth="155.0" text="200">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font></Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </VBox>
+                                    <ProgressBar minHeight="-Infinity" opacity="0.78" prefHeight="7.0" prefWidth="91.0" progress="0.54" style="-fx-background-color: black;" styleClass="custom-progress-bar" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: #F39C12; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+                           <children>
+                              <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #112D4E;" />
+                              <VBox layoutX="91.0" layoutY="-1.0" prefHeight="131.0" prefWidth="94.0" spacing="10.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <VBox prefHeight="54.0" prefWidth="155.0">
+                                       <children>
+                                          <Label prefHeight="27.0" prefWidth="155.0" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: black;" text="admins">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label prefHeight="27.0" prefWidth="155.0" text="1">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font></Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </VBox>
+                                    <ProgressBar minHeight="-Infinity" opacity="0.78" prefHeight="7.0" prefWidth="91.0" progress="0.77" style="-fx-background-color: black;" styleClass="custom-progress-bar" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: #DD4B39; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+                           <children>
+                              <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #112D4E;" />
+                              <VBox layoutX="91.0" prefHeight="128.0" prefWidth="94.0" spacing="10.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <VBox prefHeight="54.0" prefWidth="155.0">
+                                       <children>
+                                          <Label prefHeight="27.0" prefWidth="155.0" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: black;" text="subcription">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label prefHeight="27.0" prefWidth="155.0" text="450">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font></Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </VBox>
+                                    <ProgressBar minHeight="-Infinity" opacity="0.78" prefHeight="7.0" prefWidth="93.0" progress="0.36" style="-fx-background-color: black;" styleClass="custom-progress-bar" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="128.0" prefWidth="1164.0" spacing="16.0">
+                     <children>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white;">
+                           <children>
+                              <VBox layoutY="-4.0" prefHeight="82.0" prefWidth="182.0" style="-fx-background-color: #112D4E;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="64.0" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="150" />
+                                    <Label prefHeight="25.0" prefWidth="145.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: white;" text="New Users" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white;">
+                           <children>
+                              <VBox layoutY="-4.0" prefHeight="82.0" prefWidth="182.0" style="-fx-background-color: #112D4E;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="64.0" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="150" />
+                                    <Label prefHeight="25.0" prefWidth="145.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: white;" text="new Products" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white;">
+                           <children>
+                              <VBox layoutY="-4.0" prefHeight="82.0" prefWidth="182.0" style="-fx-background-color: #112D4E;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="64.0" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="150" />
+                                    <Label prefHeight="25.0" prefWidth="145.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: white;" text="new Programs" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white;">
+                           <children>
+                              <VBox layoutY="-4.0" prefHeight="82.0" prefWidth="186.0" style="-fx-background-color: #112D4E;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="64.0" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="150" />
+                                    <Label prefHeight="25.0" prefWidth="145.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: white;" text="new reclamations" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="profile" layoutX="310.0" layoutY="6.0" prefHeight="624.0" prefWidth="778.0" visible="false">
+         <children>
+            <AnchorPane layoutX="122.0" layoutY="14.0" prefHeight="362.0" prefWidth="235.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-color: #3C8DBC; -fx-border-radius: 3; -fx-border-width: 4 0 0 0; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-padding: 4;">
+               <children>
+                  <Circle fill="#d7dadd" layoutX="135.0" layoutY="61.0" radius="47.0" stroke="#a49f9f" strokeType="INSIDE" />
+                  <Separator layoutX="13.0" layoutY="184.0" prefHeight="4.0" prefWidth="244.0" />
+                  <Label layoutX="41.0" layoutY="127.0" prefHeight="17.0" prefWidth="189.0" style="-fx-text-fill: #162E3B; -fx-font-size: 16; -fx-font-weight: bold; -fx-alignment: center;" text="Dan Mlayah" />
+                  <Label layoutX="41.0" layoutY="153.0" prefHeight="17.0" prefWidth="189.0" style="-fx-text-fill: #A6A6A6; -fx-font-size: 14; -fx-alignment: center;" text="Software Developer" />
+                  <Separator layoutX="13.0" layoutY="222.0" prefHeight="4.0" prefWidth="244.0" />
+                  <Separator layoutX="14.0" layoutY="261.0" prefHeight="4.0" prefWidth="244.0" />
+                  <Separator layoutX="14.0" layoutY="300.0" prefHeight="4.0" prefWidth="244.0" />
+                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="106.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/profile1.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="14.0" layoutY="196.0" prefHeight="17.0" prefWidth="94.0" text="Followers">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="235.0" prefHeight="17.0" prefWidth="94.0" text="Following">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="274.0" prefHeight="17.0" prefWidth="94.0" text="Friends">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="196.0" layoutY="196.0" prefHeight="17.0" prefWidth="60.0" text="1,344" textFill="#918dbc">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="196.0" layoutY="235.0" prefHeight="17.0" prefWidth="60.0" text="543" textFill="#918dbc">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="196.0" layoutY="274.0" prefHeight="17.0" prefWidth="60.0" text="13,753" textFill="#918dbc">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="122.0" layoutY="343.0" prefHeight="266.0" prefWidth="266.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+               <children>
+                  <Separator layoutX="13.0" layoutY="167.0" prefHeight="4.0" prefWidth="244.0" />
+                  <Separator layoutX="13.0" layoutY="197.0" prefHeight="4.0" prefWidth="244.0" />
+                  <Separator layoutX="14.0" layoutY="227.0" prefHeight="4.0" prefWidth="244.0" />
+                  <Label layoutX="14.0" layoutY="171.0" prefHeight="17.0" prefWidth="94.0" text="Tasks">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="201.0" prefHeight="20.0" prefWidth="124.0" text="Completed">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="230.0" prefHeight="17.0" prefWidth="94.0" text="Followers">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="12.0" layoutY="141.0" prefHeight="17.0" prefWidth="94.0" text="Projects">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="224.0" layoutY="139.0" prefHeight="20.0" prefWidth="29.0" style="-fx-alignment: center; -fx-background-color: #3C8DBC; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;" text="31">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label layoutX="216.0" layoutY="232.0" prefHeight="17.0" prefWidth="40.0" style="-fx-alignment: center; -fx-background-color: #DD4B39; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;" text="866">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label layoutX="230.0" layoutY="173.0" prefHeight="17.0" prefWidth="22.0" style="-fx-alignment: center; -fx-background-color: #00C0EF; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;" text="5">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label layoutX="230.0" layoutY="203.0" prefHeight="17.0" prefWidth="22.0" style="-fx-alignment: center; -fx-background-color: #00A65A; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;" text="12">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Pane layoutX="-1.0" prefHeight="131.0" prefWidth="266.0" style="-fx-background-color: #F39C12;">
+                     <children>
+                        <Circle layoutX="55.0" layoutY="64.0" radius="41.0" stroke="#a49f9f" strokeType="INSIDE">
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#8a765a" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Circle>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="25.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/profile1.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="120.0" layoutY="31.0" prefHeight="30.0" prefWidth="143.0" text="Dan Mlayah" textFill="#fffefe">
+                           <font>
+                              <Font name="Roboto Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="120.0" layoutY="66.0" prefHeight="25.0" prefWidth="124.0" text="Lead developer" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="460.0" layoutY="14.0" prefHeight="579.0" prefWidth="244.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-color: #3C8DBC; -fx-border-radius: 3; -fx-border-width: 4 0 0 0; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-padding: 4;">
+               <children>
+                  <Separator layoutX="13.0" layoutY="45.0" prefHeight="4.0" prefWidth="244.0" />
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="189.0" style="-fx-text-fill: #162E3B; -fx-font-size: 16; -fx-font-weight: bold; -fx-alignment: left;" text="About me" />
+                  <Separator layoutX="13.0" layoutY="154.0" prefHeight="4.0" prefWidth="244.0" />
+                  <Separator layoutX="14.0" layoutY="235.0" prefHeight="4.0" prefWidth="244.0" />
+                  <Separator layoutX="14.0" layoutY="363.0" prefHeight="4.0" prefWidth="244.0" />
+                  <Label layoutX="13.0" layoutY="60.0" prefHeight="17.0" prefWidth="94.0" text="Education">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="13.0" layoutY="161.0" prefHeight="17.0" prefWidth="94.0" text="Location">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="254.0" prefHeight="17.0" prefWidth="94.0" text="Skills">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="87.0" prefHeight="54.0" prefWidth="244.0" text="Bs in Computer Science from Kenyatta University in Nairobi" wrapText="true">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="13.0" layoutY="188.0" prefHeight="31.0" prefWidth="244.0" text="Nairobi , Kenya" wrapText="true">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="380.0" prefHeight="17.0" prefWidth="94.0" text="Notes">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="281.0" prefHeight="17.0" prefWidth="94.0" style="-fx-alignment: center; -fx-background-color: #DD4B39; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;" text="Javascript">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label layoutX="120.0" layoutY="281.0" prefHeight="17.0" prefWidth="49.0" style="-fx-alignment: center; -fx-background-color: #00A65A; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;" text="javafx">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label layoutX="189.0" layoutY="281.0" prefHeight="17.0" prefWidth="70.0" style="-fx-alignment: center; -fx-background-color: #00C0EF; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;" text="UI Design">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label layoutX="50.0" layoutY="320.0" prefHeight="17.0" prefWidth="70.0" style="-fx-alignment: center; -fx-background-color: #F39C12; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;" text="Coding">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label layoutX="137.0" layoutY="320.0" prefHeight="20.0" prefWidth="87.0" style="-fx-alignment: center; -fx-background-color: #3C8DBC; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;" text="Networking">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label layoutX="23.0" layoutY="407.0" prefHeight="150.0" prefWidth="235.0" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi" wrapText="true">
+                     <font>
+                        <Font name="Roboto Light" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Users" layoutX="316.0" prefHeight="636.0" prefWidth="790.0" style="-fx-background-color: #112D4E;" visible="false">
+         <children>
+            <ScrollPane layoutY="69.0" prefHeight="566.0" prefWidth="799.0">
+               <content>
+                  <GridPane fx:id="userGridPane" prefHeight="678.0" prefWidth="790.0" style="-fx-background-color: #DBE2EF;">
+                     <vgap>
+                        <Double fx:value="10.0" />
+                     </vgap>
+                     <children>
+                        <ImageView fx:id="photoProfile" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+            <CheckBox fx:id="adminChecked" layoutX="319.0" layoutY="28.0" mnemonicParsing="false" text="select Admins" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="coachChecked" layoutX="429.0" layoutY="28.0" mnemonicParsing="false" text="select Coachs" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </CheckBox>
+            <TextField fx:id="searchInput" layoutX="568.0" layoutY="24.0" />
+            <Button fx:id="valid" layoutX="725.0" layoutY="24.0" mnemonicParsing="false" onAction="#search" style="-fx-background-color: #7387A8;" text="Button" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="subcribeList" layoutX="318.0" prefHeight="642.0" prefWidth="799.0" visible="false">
+         <children>
+            <ScrollPane prefHeight="642.0" prefWidth="807.0">
+               <content>
+                  <GridPane fx:id="userGridPane1" prefHeight="651.0" prefWidth="792.0" style="-fx-background-color: #DBE2EF;" vgap="10.0">
+                     <vgap>
+                        <Double fx:value="10.0" />
+                     </vgap>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="subscribes" layoutX="318.0" prefHeight="642.0" prefWidth="807.0" visible="false">
+         <children>
+            <Pane fx:id="pnlCustome1" layoutX="254.0" layoutY="137.0" minHeight="214.0" minWidth="235.0" prefHeight="403.0" prefWidth="235.0" style="-fx-background-color: #112D4E; -fx-min-width: 300px; -fx-min-height: 150px; -fx-alignment: center; -fx-background-radius: 18px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+               <children>
+                  <Button fx:id="emptyInputs1" layoutX="107.0" layoutY="338.0" onAction="#emptyInputsForSubcribes" style="-fx-background-radius: 50px; -fx-background-color: #112D4E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Empty Inputs" textFill="WHITE" />
+                  <Button fx:id="updateSubscribe" layoutX="96.0" layoutY="296.0" onAction="#updateSubscribe" style="-fx-background-radius: 50px; -fx-background-color: #112D4E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="update Subscribe" textFill="WHITE" />
+                  <Button fx:id="saveUserButton1" layoutX="102.0" layoutY="253.0" onAction="#addUser" style="-fx-background-radius: 50px; -fx-background-color: #112D4E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Save Subscribe" textFill="WHITE" />
+                  <DatePicker fx:id="dateDebut" layoutX="96.0" layoutY="26.0" />
+                  <Label layoutX="17.0" layoutY="30.0" text="date debut :" textFill="WHITE" />
+                  <DatePicker fx:id="dateFin" layoutX="96.0" layoutY="91.0" />
+                  <Label layoutX="24.0" layoutY="95.0" text="date fin :" textFill="WHITE" />
+                  <TextField fx:id="prix" layoutX="96.0" layoutY="144.0" prefHeight="25.0" prefWidth="175.0" />
+                  <Label layoutX="33.0" layoutY="148.0" text="prix :" textFill="WHITE" />
+                  <TextField fx:id="idUserSubsribe" layoutX="96.0" layoutY="195.0" prefHeight="25.0" prefWidth="175.0" />
+                  <Label layoutX="32.0" layoutY="199.0" text="id User :" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Label layoutX="330.0" layoutY="40.0" text="Subsribe">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

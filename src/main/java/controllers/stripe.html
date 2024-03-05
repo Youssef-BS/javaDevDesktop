@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #payment-form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #card-element {
+            margin-bottom: 20px;
+        }
+        #submit-payment {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<form id="payment-form">
+    <!-- You can customize the form fields based on your needs -->
+    <div id="card-element"></div>
+    <button type="button" id="submit-payment">Submit Payment</button>
+</form>
+
+<script>
+    // Add your Stripe.js logic here
+    document.addEventListener('DOMContentLoaded', function() {
+        const stripe = Stripe('pk_test_51OpDKRCibHqyLeRNSg35hHkDAN8qmDwphs9mHVyb2eHYGAmKdc10t3MYxykND1Z531M4T6Qekvuyu7Ncl0Qe7E9T00TAhIEhYe');
+        const elements = stripe.elements();
+        const card = elements.create('card');
+        card.mount('#card-element');
+        const paymentForm = document.getElementById('payment-form');
+        const submitButton = document.getElementById('submit-payment');
+
+        submitButton.addEventListener('click', async function() {
+            console.log("Submit Payment button clicked");
+            const { token, error } = await stripe.createToken(card);
+
+            if (error) {
+                console.error("Error creating token:", error);
+            } else {
+                console.log("Token created:", token.id);
+                window.javaApp.processPayment(token.id);
+            }
+        });
+
+
+    });
+</script>
+</body>
+</html>

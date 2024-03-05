@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="827.0" prefWidth="1303.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProgClientController">
+   <children>
+      <AnchorPane fx:id="programTable" layoutX="312.0" layoutY="18.0" prefHeight="773.0" prefWidth="982.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20;" styleClass="shadow">
+         <children>
+            <ScrollPane layoutX="10.0" layoutY="14.0" prefHeight="748.0" prefWidth="960.0" styleClass="transparent" stylesheets="@style.css">
+               <content>
+                  <GridPane fx:id="programGridPane" prefHeight="11.0" prefWidth="91.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+            <Button fx:id="showSubscribedProgramsButton" layoutX="818.0" layoutY="-8.0" mnemonicParsing="false" onAction="#showSubscribedPrograms" prefHeight="32.0" prefWidth="160.0" styleClass="btn" text="Mes Programme" textFill="#fcfcfc" />
+            <Button fx:id="gotoprogrammesbtn" layoutX="397.0" layoutY="-7.0" mnemonicParsing="false"  prefHeight="37.0" prefWidth="191.0" style="-fx-background-radius: 20;" styleClass="btnBar" text="PROGRAMMES" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <VBox alignment="CENTER" layoutX="18.0" layoutY="140.0" prefHeight="484.0" prefWidth="275.0" style="-fx-background-radius: 20; -fx-opacity: 0.9;" styleClass="selectedProgram">
+         <children>
+            <Label fx:id="tnom" prefHeight="70.0" prefWidth="152.0" text="NOM PROGRAMME" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageview" fitHeight="204.0" fitWidth="266.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox alignment="CENTER" prefHeight="124.0" prefWidth="267.0">
+               <children>
+                  <Label fx:id="tdescription" prefHeight="20.0" prefWidth="197.0" text="Description" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tduree" prefHeight="17.0" prefWidth="62.0" text="Duree" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="46.0" prefWidth="275.0">
+               <children>
+                  <Label fx:id="tprix" contentDisplay="CENTER" prefHeight="32.0" prefWidth="75.0" text="Prix">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="46.0" prefWidth="196.0">
+                     <children>
+                        <Button fx:id="confirmer" mnemonicParsing="false" onAction="#confirmer" prefHeight="34.0" prefWidth="105.0" style="-fx-background-radius: 10px;" styleClass="confirmbtn" text="Confirmer" textFill="#9a9696">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <opaqueInsets>
+                        <Insets left="5.0" />
+                     </opaqueInsets>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ImageView fx:id="signout" fitHeight="56.0" fitWidth="62.0" layoutX="18.0" layoutY="735.0" onMouseClicked="#signout" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+         <image>
+            <Image url="@exit.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="evenement" layoutX="60.0" layoutY="18.0" mnemonicParsing="false" onAction="#gotoevenement" prefHeight="37.0" prefWidth="191.0" style="-fx-background-radius: 20;" styleClass="btnBar" text="EVENEMENTS" textFill="WHITE" />
+   </children>
+   <stylesheets>
+      <URL value="@style.css" />
+      <URL value="@progcss.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="anchorprog" />
+      <String fx:value="shadow" />
+   </styleClass>
+</AnchorPane>

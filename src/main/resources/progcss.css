@@ -1,0 +1,17 @@
+.anchorprog{
+    -fx-background-image:url('bckgprog.jpg');
+    -fx-background-size: 100%,100%;
+}
+.anchorevent{
+    -fx-background-image:url('bckg.jpg');
+    -fx-background-size: 100%,100%;
+}
+.selectedProgram{
+    -fx-background-color: #5588A3;
+    -fx-border-radius: 10px;
+}
+.confirmbtn{
+    -fx-border-radius: 10px;
+    -fx-background-color: #e1e1e1;
+    -fx-fill: grey;
+}

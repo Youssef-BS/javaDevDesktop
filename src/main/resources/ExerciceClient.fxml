@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+
+<AnchorPane prefHeight="827.0" prefWidth="1303.0" styleClass="anchor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ExerciceClientController">
+   <children>
+      <AnchorPane fx:id="exerciceTable" layoutX="193.0" layoutY="27.0" prefHeight="773.0" prefWidth="918.0" style="-fx-background-radius: 20; -fx-background-color: #ffffff;" styleClass="shadow">
+         <children>
+            <ScrollPane layoutX="10.0" layoutY="14.0" prefHeight="748.0" prefWidth="897.0" styleClass="transparent" stylesheets="@style.css">
+               <content>
+                  <GridPane fx:id="exerciceGridPane" alignment="CENTER" prefHeight="11.0" prefWidth="873.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="backProg" fitHeight="55.0" fitWidth="56.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backProg" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+         <image>
+            <Image url="@back.png" />
+         </image>
+      </ImageView>
+   </children>
+   <stylesheets>
+      <URL value="@style.css" />
+      <URL value="@cardercice.css" />
+   </stylesheets>
+</AnchorPane>

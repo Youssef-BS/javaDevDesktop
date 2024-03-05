@@ -1,0 +1,15 @@
+.product-item {
+    /* Your regular styling */
+    -fx-background-color: #f0f0f0; /* Background color */
+    -fx-border-color: #ddd; /* Border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-border-radius: 5px; /* Border radius */
+    -fx-padding: 10px; /* Padding */
+    -fx-transition-duration: 0.5s; /* Transition duration */
+}
+
+/* Hover effect for the BorderPane */
+.product-item:hover {
+    /* Apply hover effect properties */
+    -fx-background-color: #ff0000; /* Red background color on hover */
+}

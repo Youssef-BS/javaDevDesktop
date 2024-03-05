@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="827.0" prefWidth="1303.0" styleClass="anchorevent" stylesheets="@progcss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.WelcomeController">
+   <children>
+      <Button fx:id="admin" layoutX="593.0" layoutY="346.0" mnemonicParsing="false" onAction="#admin" prefHeight="50.0" prefWidth="117.0" text="ADMIN" />
+      <Button fx:id="client" layoutX="593.0" layoutY="432.0" mnemonicParsing="false" onAction="#client" prefHeight="50.0" prefWidth="117.0" text="CLIENT" />
+      <ComboBox fx:id="userID" layoutX="577.0" layoutY="531.0" prefWidth="150.0" promptText="USER ID" />
+   </children>
+</AnchorPane>

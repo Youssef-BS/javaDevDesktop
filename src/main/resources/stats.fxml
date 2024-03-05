@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1340.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.stats">
+   <children>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane fx:id="main" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #145374;">
+         <children>
+            <Button layoutX="45.0" layoutY="563.0" mnemonicParsing="false"  prefHeight="29.0" prefWidth="65.0" style="-fx-background-color: e8e8e8; -fx-background-radius: 10;" text="Return" textFill="#145374">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <ImageView fx:id="imageshow" fitHeight="192.0" fitWidth="244.0" layoutX="61.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+            <AnchorPane layoutX="31.0" layoutY="165.0" prefHeight="387.0" prefWidth="521.0" style="-fx-background-color: #5588a3; -fx-background-radius: 10;">
+               <children>
+                  <PieChart fx:id="productStatsChart" layoutX="9.0" layoutY="-2.0" prefHeight="371.0" prefWidth="501.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="575.0" layoutY="166.0" prefHeight="387.0" prefWidth="521.0" style="-fx-background-color: #5588a3; -fx-background-radius: 10;">
+               <children>
+                  <PieChart fx:id="ventes" layoutX="14.0" layoutY="14.0" prefHeight="360.0" prefWidth="442.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="186.0" layoutY="118.0" text="Products in stock" textFill="#e8e8e8">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="764.0" layoutY="114.0" text="Best seller" textFill="#e8e8e8">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="127.0" prefWidth="159.0" style="-fx-background-color: e8e8e8; -fx-background-radius: 50;">
+               <children>
+                  <ImageView fitHeight="129.0" fitWidth="159.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@new.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

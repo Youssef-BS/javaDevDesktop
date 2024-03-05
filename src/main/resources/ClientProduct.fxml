@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1390.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientController">
+   <children>
+      <ScrollPane prefHeight="721.0" prefWidth="1340.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1341.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="773.0" fitWidth="1505.0" layoutX="-3.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pngtree-an-empty-gym-with-some-machines-picture-image_3105884.jpg" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="last" layoutX="38.0" layoutY="555.0" mnemonicParsing="false" onAction="#logout" prefHeight="35.0" prefWidth="76.0" text="Logout" textFill="#145374">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Button>
+                        <ScrollPane layoutX="180.0" layoutY="30.0" prefHeight="580.0" prefWidth="851.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="865.0" style="-fx-background-color: #00334E; -fx-background-radius: 10;">
+                                 <children>
+                                    <GridPane fx:id="gridPanes" hgap="10" layoutX="22.0" layoutY="20.0" prefHeight="218.0" prefWidth="213.0" stylesheets="@style.css" vgap="20">
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <AnchorPane fx:id="anchor" layoutX="1044.0" layoutY="30.0" prefHeight="651.0" prefWidth="307.0" stylesheets="@buttonC.css">
+                           <children>
+                              <Label layoutX="59.0" layoutY="-5.0" prefHeight="50.0" prefWidth="189.0" text="Your Budget is:" textFill="#e8e8e8">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton fx:id="prixabove50" layoutX="99.0" layoutY="44.0" mnemonicParsing="false" text="More than 50" textFill="#e8e8e8">
+                               <toggleGroup>
+                                   <ToggleGroup fx:id="price" />
+                               </toggleGroup>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                               </RadioButton>
+                               <RadioButton fx:id="prixbelow50" layoutX="100.0" layoutY="76.0" mnemonicParsing="false" text="Less than 50" textFill="#e8e8e8" toggleGroup="$price">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></RadioButton>
+
+                              <RadioButton fx:id="all" layoutX="101.0" layoutY="105.0" mnemonicParsing="false" text="All" textFill="#e8e8e8" toggleGroup="$price">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></RadioButton>
+                              <ChoiceBox fx:id="choiceprod" layoutX="62.0" layoutY="178.0" onMousePressed="#productChoiceBox" prefWidth="150.0" />
+                              <ChoiceBox fx:id="choiceid" layoutX="62.0" layoutY="217.0" onMousePressed="#idChoiceBox" prefWidth="150.0" />
+                              <Button fx:id="add" layoutX="89.0" layoutY="261.0" mnemonicParsing="false" onAction="#addproduct" prefHeight="25.0" prefWidth="106.0" text="Add to basket " textFill="#00334e">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font></Button>
+                              <TableView fx:id="tableViews" layoutX="15.0" layoutY="300.0" prefHeight="198.0" prefWidth="267.0" stylesheets="@style.css">
+                                 <columns>
+                                    <TableColumn fx:id="idUserColumn" minWidth="0.0" prefWidth="0.0" style="-fx-background-radius: 5;" text="ID" />
+                                    <TableColumn fx:id="nomProduitColumn" prefWidth="170.0" text="Product Name" />
+                                    <TableColumn fx:id="prixProduitColumn" prefWidth="97.0" text="Price" />
+                                    <TableColumn fx:id="idProduitColumn" minWidth="0.0" prefWidth="0.0" text="Column X" />
+                                    <TableColumn fx:id="idPanierColumn" minWidth="8.0" prefWidth="8.0" text="idpanier" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="filtre" layoutX="89.0" layoutY="135.0" mnemonicParsing="false" onAction="#searchproduct" prefHeight="25.0" prefWidth="106.0" text="Filtre" textFill="#00334e">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="refpanier" layoutX="31.0" layoutY="507.0" mnemonicParsing="false" onAction="#affichepa" prefHeight="25.0" prefWidth="116.0" text="show the basket " textFill="#00334e">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="totalLabel" layoutX="64.0" layoutY="552.0" prefHeight="35.0" prefWidth="164.0" textFill="#e8e8e8">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="deleteprod" layoutX="154.0" layoutY="508.0" mnemonicParsing="false" onAction="#deleteProduct" text="Delete from basket" textFill="#00334e">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="commande" layoutX="114.0" layoutY="587.0" mnemonicParsing="false" onAction="#confirmcommande" prefHeight="34.0" prefWidth="78.0" text="Confirm" textFill="#00334e">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font></Button>
+                           </children>
+                        </AnchorPane>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                        <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="117.0" prefWidth="162.0" style="-fx-background-color: #e8e8e8; -fx-background-radius: 50;">
+                           <children>
+                              <ImageView fitHeight="99.0" fitWidth="167.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@new.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</StackPane>

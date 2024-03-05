@@ -1,0 +1,48 @@
+#last{
+-fx-background-color:    #5588a3;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#last:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #6099B7;
+
+    }
+#conf{
+-fx-background-color:    #5588a3;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#conf:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #6099B7;
+
+    }
+#ref{
+-fx-background-color:    #5588a3;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#ref:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #6099B7;
+
+    }
+#refr{
+-fx-background-color:    #5588a3;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#refr:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #6099B7;
+
+    }

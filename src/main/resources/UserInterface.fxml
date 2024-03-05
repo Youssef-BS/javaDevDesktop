@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="638.0" prefWidth="974.0" style="-fx-background-color: #E8E8E8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserControllors">
+   <children>
+      <Pane prefHeight="639.0" prefWidth="247.0" style="-fx-background-color: #00334E;">
+         <children>
+            <Pane fx:id="menu" layoutX="24.0" layoutY="112.0" prefHeight="408.0" prefWidth="200.0" style="-fx-background-color: #145374; -fx-background-radius: 40px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;">
+               <children>
+                  <Button fx:id="buy" layoutX="23.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleClick" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #00334E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="Buy Subscribe" textFill="WHITE" />
+                  <Button fx:id="view" layoutX="23.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleClick" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #00334E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="View Your Subscribes" textFill="WHITE" />
+                  <Button layoutX="23.0" layoutY="167.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #00334E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="add Reclamation" textFill="WHITE" onAction="#switchRec"/>
+                  <Button layoutX="23.0" layoutY="221.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #00334E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="See Product" textFill="WHITE"  onAction="#switchProduct" />
+                  <Button layoutX="23.0" layoutY="278.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #00334E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="See Event " textFill="WHITE" onAction="#switchProg"/>
+                  <Button layoutX="23.0" layoutY="332.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #00334E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="see Gyms" textFill="WHITE" onAction="#switchGym"/>
+               </children>
+            </Pane>
+            <Button fx:id="btn" layoutX="59.0" layoutY="564.0" mnemonicParsing="false" onAction="#logout" prefHeight="35.0" prefWidth="129.0" style="-fx-background-color: #145374; -fx-background-radius: 50px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Logout" textFill="WHITE" />
+         </children>
+      </Pane>
+      <AnchorPane fx:id="Subscribes" layoutX="247.0" prefHeight="639.0" prefWidth="727.0">
+         <children>
+            <Pane layoutX="14.0" layoutY="90.0" prefHeight="512.0" prefWidth="221.0" style="-fx-background-color: #00334E; -fx-background-radius: 12px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;">
+               <children>
+      
+                  <Label layoutX="11.0" layoutY="243.0" prefHeight="184.0" prefWidth="200.0" text="Embark on a transformative fitness journey with our 1-month gym membership! This subscription offers you unparalleled access to state-of-the-art facilities, expert guidance, and a motivating environment to help you achieve your fitness goals." textAlignment="CENTER" textFill="#f7f7f7" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="7.0" layoutY="46.0" prefHeight="85.0" prefWidth="215.0" text="Gym Membership - 1 Month" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="month" layoutX="95.0" layoutY="162.0" prefHeight="35.0" prefWidth="40.0" text="40$" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="first" layoutX="33.0" layoutY="443.0" mnemonicParsing="false" onAction="#initialize" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #145374; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="Buy" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane layoutX="253.0" layoutY="90.0" prefHeight="512.0" prefWidth="221.0" style="-fx-background-color: #00334E; -fx-background-radius: 12px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;">
+               <children>
+                  <Label layoutX="11.0" layoutY="245.0" prefHeight="161.0" prefWidth="200.0" text="Elevate your fitness journey with our exclusive 3-month gym membership, now with a special emphasis on cardio workouts! Immerse yourself in a holistic fitness experience designed to enhance your cardiovascular health and overall well-being." textAlignment="CENTER" textFill="#f7f7f7" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="3.0" layoutY="44.0" prefHeight="85.0" prefWidth="215.0" text="Gym Membership - 3 Months with Cardio" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="threeMonths" layoutX="84.0" layoutY="164.0" prefHeight="35.0" prefWidth="54.0" text="115$" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="second" layoutX="29.0" layoutY="442.0" mnemonicParsing="false" onAction="#initialize" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #145374; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="Buy" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane layoutX="491.0" layoutY="90.0" prefHeight="512.0" prefWidth="221.0" style="-fx-background-color: #00334E; -fx-background-radius: 12px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;">
+               <children>
+                  <Label layoutX="3.0" layoutY="57.0" prefHeight="85.0" prefWidth="215.0" text=" Premium Annual Gym Membership with Breakfast and Cardio" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="11.0" layoutY="243.0" prefHeight="161.0" prefWidth="200.0" text="Embark on a year-long wellness journey with our exclusive Premium Annual Gym Membership. This comprehensive package not only provides unlimited access to our state-of-the-art gym facilities but also includes a delightful breakfast plan and a special focus on invigorating cardio workouts." textAlignment="CENTER" textFill="#f7f7f7" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="oneYear" layoutX="82.0" layoutY="162.0" prefHeight="35.0" prefWidth="54.0" text="400$" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="last" layoutX="34.0" layoutY="441.0" mnemonicParsing="false" onAction="#initialize" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #145374; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="Buy" textFill="WHITE" />
+               </children>
+            </Pane>
+<!--            <Pane layoutX="265.0" layoutY="79.0" prefHeight="512.0" prefWidth="221.0" style="-fx-background-color: #00334E; -fx-background-radius: 12px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">-->
+<!--               <children>-->
+<!--                  <WebView fx:id="webView" prefHeight="512.0" prefWidth="221.0" />-->
+<!--               </children>-->
+<!--            </Pane>-->
+            <Label layoutX="268.0" layoutY="28.0" prefHeight="35.0" prefWidth="190.0" text="Buy subscription" textFill="#00334e">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ListUser" layoutX="247.0" prefHeight="639.0" prefWidth="727.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <ScrollPane layoutY="-7.0" prefHeight="639.0" prefWidth="799.0">
+               <content>
+                  <GridPane fx:id="userGridPane" prefHeight="678.0" prefWidth="790.0" style="-fx-background-color: #DBE2EF;" vgap="10.0">
+                     <children>
+                        <ImageView fx:id="photoProfile" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="payment" layoutX="247.0" prefHeight="639.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
+         <VBox layoutX="265.0" layoutY="79.0" prefHeight="512.0" prefWidth="400.0" style="-fx-background-color: #00334E; -fx-background-radius: 12px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+            <children>
+               <WebView fx:id="webView" prefHeight="512.0" prefWidth="221.0" />
+            </children>
+         </VBox>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,150 @@
+#updatephoto{
+-fx-background-color:   #e8e8e8;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#updatephoto:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #BDBDBD;
+
+    }
+#conf{
+-fx-background-color:   #e8e8e8;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#conf:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #BDBDBD;
+
+    }
+#del{
+-fx-background-color:   #e8e8e8;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#del:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #BDBDBD;
+
+    }
+#comm{
+-fx-background-color:   #e8e8e8;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#comm:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #BDBDBD;
+
+    }
+#comm{
+-fx-background-color:   #e8e8e8;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#comm:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #BDBDBD;
+
+    }
+#update{
+-fx-background-color:   #e8e8e8;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#update:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #BDBDBD;
+
+    }
+
+    
+#yess{
+-fx-background-color:   #e8e8e8;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#yess:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #BDBDBD;
+
+    }
+#last{
+-fx-background-color:   #e8e8e8;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#last:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #BDBDBD;
+
+    }
+#confirm{
+-fx-background-color:   #e8e8e8;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#confirm:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #BDBDBD;
+
+    }
+#importButton{
+-fx-background-color:   #e8e8e8;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#importButton:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #BDBDBD;
+
+    }
+#anchoradd{
+-fx-background-color:    #145374;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#anchoradd:hover {
+-fx-background-color: #206E97;
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+
+
+    }
+
+#anchorup{
+-fx-background-color:    #145374;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:10;
+}
+#anchorup:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+-fx-background-color: #206E97;
+
+    }
+
+

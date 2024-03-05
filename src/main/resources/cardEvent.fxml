@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onMousePressed="#click" prefHeight="139.0" prefWidth="538.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.cardEventController">
+   <children>
+      <VBox layoutX="-1.0" layoutY="-2.0" prefHeight="158.0" prefWidth="538.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="538.0">
+               <children>
+                  <Label fx:id="nomP" prefHeight="21.0" prefWidth="400.0" text="Nom">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="nbMax" prefHeight="21.0" prefWidth="126.0" text="Place Disponible">
+                     <font>
+                        <Font name="Bookman Old Style" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets left="10.0" />
+               </opaqueInsets>
+            </HBox>
+            <HBox prefHeight="42.0" prefWidth="538.0">
+               <children>
+                  <Label fx:id="dureeP" prefHeight="24.0" prefWidth="443.0" text="Duree" textFill="#4296cb">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="deadlineP" prefHeight="28.0" prefWidth="112.0" text="Date Debut" textFill="#4296cb">
+                     <font>
+                        <Font name="Californian FB" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label fx:id="descriptionP" prefHeight="39.0" prefWidth="271.0" text="Description" textFill="#979494">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="264.0">
+               <children>
+                  <Button fx:id="participerbtn" mnemonicParsing="false" onMousePressed="#choose" styleClass="btn" stylesheets="@style.css" text="Participer" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="card" />
+      <String fx:value="shadow" />
+   </styleClass>
+</AnchorPane>

@@ -1,0 +1,73 @@
+#solde4{
+-fx-background-color:  #F05656;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:80;
+}
+#solde4:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+    -fx-pref-height: 60; 
+    -fx-pref-width:60;
+-fx-background-color: #FF0000;
+-fx-font-size:14;
+    }
+
+
+#solde3{
+-fx-background-color:  #F05656;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:80;
+}
+#solde3:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+    -fx-pref-height: 55; 
+    -fx-pref-width:55;
+-fx-background-color: #FF0000;
+-fx-font-size:13;
+    }
+
+#solde2{
+-fx-background-color:  #F05656;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:80;
+}
+#solde2:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+    -fx-pref-height: 50; 
+    -fx-pref-width:50;
+-fx-background-color: #FF0000;
+-fx-font-size:12;
+    }
+#solde1{
+-fx-background-color:  #F05656;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:80;
+}
+#solde1:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+    -fx-pref-height: 45; 
+    -fx-pref-width:45;
+-fx-background-color: #FF0000;
+-fx-font-size:12;
+    }
+#solde{
+-fx-background-color:  #F05656;
+-fx-border-width: 1px;
+-fx-cursor: hand;
+-fx-background-radius:80;
+}
+#solde:hover {
+-fx-transition-duration: 1s; 
+    -fx-effect: dropshadow(gaussian, #666, 5, 0.5, 0, 0);
+    -fx-pref-height: 40; 
+    -fx-pref-width:40;
+-fx-background-color: #FF0000;
+-fx-font-size:11;
+    }
