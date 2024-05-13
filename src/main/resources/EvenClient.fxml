@@ -36,6 +36,7 @@
             </ScrollPane>
             <Button fx:id="calendrier" layoutX="611.0" layoutY="-14.0" mnemonicParsing="false" onAction="#displaycalendar" styleClass="btn" text="Calendrier" textFill="WHITE" />
             <Button fx:id="evenement" layoutX="260.0" layoutY="-7.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="191.0" style="-fx-background-radius: 20;" styleClass="btnBar" text="EVENEMENTS" textFill="WHITE" />
+            <Button layoutY="-12.0" mnemonicParsing="false" onAction="#showParticipatedEvents" text="Mes Evenements" />
          </children>
       </AnchorPane>
       <VBox alignment="TOP_CENTER" layoutX="109.0" layoutY="123.0" prefHeight="553.0" prefWidth="471.0" style="-fx-background-radius: 20;">
@@ -94,6 +95,7 @@
                         <Image url="@location.png" />
                      </image>
                   </ImageView>
+                  <Button mnemonicParsing="false" onAction="#confirmerParticip" text="Confirmer" />
                </children>
             </HBox>
          </children>
@@ -103,7 +105,7 @@
             <Image url="@exit.png" />
          </image>
       </ImageView>
-    <Button fx:id="gotoprogrammesbtn" layoutX="249.0" layoutY="27.0" mnemonicParsing="false" onAction="#gotoProgramscl" prefHeight="37.0" prefWidth="191.0" style="-fx-background-radius: 20;" styleClass="btnBar" text="PROGRAMMES" textFill="WHITE" />
+      <Button fx:id="gotoprogrammesbtn" layoutX="249.0" layoutY="27.0" mnemonicParsing="false" onAction="#gotoProgramscl" prefHeight="37.0" prefWidth="191.0" style="-fx-background-radius: 20;" styleClass="btnBar" text="PROGRAMMES" textFill="WHITE" />
    </children>
    <stylesheets>
       <URL value="@style.css" />

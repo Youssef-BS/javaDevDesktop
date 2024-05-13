@@ -48,7 +48,7 @@ public class ExerciceService implements IService<Exercice> {
 
     @Override
     public void ajouter(Exercice exercice) throws SQLException {
-        String sql = "insert into exercice(nom,description,duree,difficulte,video,idprogramme)"
+        String sql = "insert into exercice(nom,description,duree,difficulte,video,program_id)"
                 +"values(?,?,?,?,?,?)";
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, exercice.getNom());
@@ -63,7 +63,7 @@ public class ExerciceService implements IService<Exercice> {
 
     @Override
     public void modifier(Exercice exercice) throws SQLException {
-        String sql = "UPDATE exercice set nom = ?,description = ?,duree = ?,difficulte = ?,video = ?, idprogramme = ? where id = ?";
+        String sql = "UPDATE exercice set nom = ?,description = ?,duree = ?,difficulte = ?,video = ?, program_id = ? where id = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, exercice.getNom());
         ps.setString(2, exercice.getDescription());
@@ -103,13 +103,13 @@ public class ExerciceService implements IService<Exercice> {
             pr.setDuree(rs.getString("duree"));
             pr.setDifficulte(rs.getString("difficulte"));
             pr.setVideo(rs.getString("video"));
-            pr.setIdprogramme(rs.getInt("idprogramme"));
+            pr.setIdprogramme(rs.getInt("program_id"));
             exercices.add(pr);
         }
         return exercices;
     }
     public List<Exercice> recuperer(int id) throws SQLException {
-        String sql = "select * from exercice where idprogramme = "+String.valueOf(id);
+        String sql = "select * from exercice where prodram_id = "+String.valueOf(id);
         Statement st = connection.createStatement();
         ResultSet rs = st.executeQuery(sql);
         List<Exercice> exercices = new ArrayList<>();
@@ -122,7 +122,7 @@ public class ExerciceService implements IService<Exercice> {
             pr.setDuree(rs.getString("duree"));
             pr.setDifficulte(rs.getString("difficulte"));
             pr.setVideo(rs.getString("video"));
-            pr.setIdprogramme(rs.getInt("idprogramme"));
+            pr.setIdprogramme(rs.getInt("program_id"));
             exercices.add(pr);
         }
         return exercices;

@@ -19,6 +19,7 @@
                   <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#search" style="-fx-background-color: #041562; -fx-background-radius: 50px;" text="Rechercher" textFill="WHITE" />
                   <Button fx:id="quiter" focusTraversable="false" mnemonicParsing="false" onAction="#quitter1" text="Quitter" visible="false" />
                   <Button focusTraversable="false" layoutX="416.0" layoutY="10.0" mnemonicParsing="false" onAction="#ajouter" style="-fx-background-color: #041562; -fx-background-radius: 50px;" text="Ajouter" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#returnToMain" text="return" />
                </children>
             </HBox>
             <ScrollPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EEEEEE;">

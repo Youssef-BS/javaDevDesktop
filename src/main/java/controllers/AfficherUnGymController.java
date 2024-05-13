@@ -167,9 +167,6 @@ Gym p;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
-
-
 
 }

@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import entities.ProductController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -102,7 +104,7 @@ public class AdminController {
 
     @FXML
     private ChoiceBox<String> coachChoiceBox;
-    private final String URL = "jdbc:mysql://localhost:3306/pi";
+    private final String URL = "jdbc:mysql://localhost:3306/pifinal";
     private final String USER = "root";
     private final String PASS = "";
     private Connection connection;
@@ -128,8 +130,8 @@ public class AdminController {
     }
 
     private int getExistingProductId(String productName, int productPrice, String photoHash) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
-            String selectQuery = "SELECT idProduit FROM produit WHERE nomProduit = ? AND prixProduit = ? AND photoProduit = ?";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
+            String selectQuery = "SELECT idProduit FROM produit WHERE nom_produit = ? AND prix_produit = ? AND photo_produit = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
                 preparedStatement.setString(1, productName);
                 preparedStatement.setDouble(2, productPrice);
@@ -148,7 +150,7 @@ public class AdminController {
         return -1;
     }
     private void updateProductQuantity(int productId,String Query) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
             String updateQuery = Query;
             try (PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
                 preparedStatement.setInt(1, productId);
@@ -163,13 +165,13 @@ public class AdminController {
     public void confirm(ActionEvent event) {
         String descr = description.getText();
         String price = prix.getText();
-        String Queryadd = "UPDATE produit SET quantiteProduit = quantiteProduit + 1 WHERE idProduit = ?";
+        String Queryadd = "UPDATE produit SET quantite_produit = quantite_produit + 1 WHERE idProduit = ?";
         int quan=1;
         if (descr.isEmpty() || selectedFile == null) {
             showAlert("Please enter a product name and select a photo.");
             return;
         }
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
             String photoPath = selectedFile.getAbsolutePath();
             int existingProductId = getExistingProductId(descr, Integer.parseInt(price), photoPath);
             if (existingProductId != -1) {
@@ -178,7 +180,7 @@ public class AdminController {
                 showAlert("Product quantity updated successfully!");
             }
             else{
-            String insertQuery = "INSERT INTO produit (nomProduit, prixProduit, photoProduit, quantiteProduit) VALUES (?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO produit (nom_produit, prix_produit, photo_produit, quantite_produit) VALUES (?, ?, ?, ?)";
 
             try (PreparedStatement insertStatement = connection.prepareStatement(insertQuery)) {
                 insertStatement.setString(1, descr);
@@ -213,7 +215,7 @@ public class AdminController {
         String nameprod = productName;
         int prixprod = productPrice;
         String photoprd = photopath;
-        String Queryadd = "UPDATE produit SET quantiteProduit = quantiteProduit - 1 WHERE idProduit = ?";
+        String Queryadd = "UPDATE produit SET quantite_produit = quantite_produit - 1 WHERE idProduit = ?";
         int existingProductId = getExistingProductId(nameprod, prixprod, photoprd);
         if (existingProductId != -1) {
             updateProductQuantity(existingProductId, Queryadd);
@@ -222,7 +224,7 @@ public class AdminController {
         }
         else{
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
             String deleteQuery = "DELETE FROM produit WHERE idProduit = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
                 preparedStatement.setInt(1, idprod);
@@ -243,7 +245,7 @@ public class AdminController {
 
     public void initialize() {
         setupTableViewSelectionListener();
-        productNameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        productNameColumn.setCellValueFactory(new PropertyValueFactory<>("productame"));
         productIDColumn.setCellValueFactory(new PropertyValueFactory<>("productID"));
         productpriceColumn.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
         photoColumn.setCellValueFactory(new PropertyValueFactory<>("photoPath"));
@@ -292,16 +294,16 @@ public class AdminController {
     public void affiche(ActionEvent actionEvent) {
 
         List<ProductController> productList = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
-            String selectQuery = "SELECT idProduit, nomProduit, prixProduit, photoProduit , quantiteProduit FROM produit";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
+            String selectQuery = "SELECT idProduit, nom_produit, prix_produit, photo_produit , quantite_produit FROM produit";
             try (PreparedStatement selectStatement = connection.prepareStatement(selectQuery);
                  ResultSet resultSet = selectStatement.executeQuery()) {
                 while (resultSet.next()) {
-                    String productName = resultSet.getString("nomProduit");
+                    String productName = resultSet.getString("nom_produit");
                     Integer productID = resultSet.getInt("idProduit");
-                    Integer productPrice = resultSet.getInt("prixProduit");
-                    String photoPath  = resultSet.getString("photoProduit");
-                    Integer productQuantity = resultSet.getInt("quantiteProduit");
+                    Integer productPrice = resultSet.getInt("prix_produit");
+                    String photoPath  = resultSet.getString("photo_produit");
+                    Integer productQuantity = resultSet.getInt("quantite_produit");
                     productList.add(new ProductController(productID,productName,productPrice,photoPath,productQuantity));
                 }
             }
@@ -355,7 +357,7 @@ public class AdminController {
         String newPrice = price.getText();
         String newQuantity = stock.getText();
         String newPhotoPath = (selectedFile != null) ? selectedFile.getAbsolutePath() : null;
-        String url = "jdbc:mysql://localhost:3306/pi";
+        String url = "jdbc:mysql://localhost:3306/pifinal";
         String username = "root";
         String password = "";
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -363,19 +365,19 @@ public class AdminController {
             StringBuilder sqlBuilder = new StringBuilder("UPDATE produit SET ");
             ArrayList<Object> parameters = new ArrayList<>();
             if (newName != null && !newName.isEmpty()) {
-                sqlBuilder.append("nomProduit = ?, ");
+                sqlBuilder.append("nom_produit = ?, ");
                 parameters.add(newName);
             }
             if (newPrice != null && !newPrice.isEmpty()) {
-                sqlBuilder.append("prixProduit = ?, ");
+                sqlBuilder.append("prix_produit = ?, ");
                 parameters.add(newPrice);
             }
             if (newPhotoPath != null && !newPhotoPath.isEmpty()) {
-                sqlBuilder.append("photoProduit = ?, ");
+                sqlBuilder.append("photo_produit = ?, ");
                 parameters.add(newPhotoPath);
             }
             if (newQuantity != null && !newQuantity.isEmpty()) {
-                sqlBuilder.append("quantiteProduit = ?, ");
+                sqlBuilder.append("quantite_produit = ?, ");
                 parameters.add(newQuantity);
             }
             sqlBuilder.delete(sqlBuilder.length() - 2, sqlBuilder.length());
@@ -412,7 +414,7 @@ public class AdminController {
         String newPhotoPath = (selectedFile != null) ? selectedFile.getAbsolutePath() : null;
 
 
-        String url = "jdbc:mysql://localhost:3306/pi";
+        String url = "jdbc:mysql://localhost:3306/pifinal";
         String username = "root";
         String password = "";
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -420,15 +422,15 @@ public class AdminController {
             StringBuilder sqlBuilder = new StringBuilder("UPDATE produit SET ");
             ArrayList<Object> parameters = new ArrayList<>();
             if (newName != null && !newName.isEmpty()) {
-                sqlBuilder.append("nomProduit = ?, ");
+                sqlBuilder.append("nom_produit = ?, ");
                 parameters.add(newName);
             }
 
-                sqlBuilder.append("prixProduit = ?, ");
+                sqlBuilder.append("prix_produit = ?, ");
                 parameters.add(newPrices);
 
             if (newPhotoPath != null && !newPhotoPath.isEmpty()) {
-                sqlBuilder.append("photoProduit = ?, ");
+                sqlBuilder.append("photo_produit = ?, ");
                 parameters.add(newPhotoPath);
             }
             sqlBuilder.delete(sqlBuilder.length() - 2, sqlBuilder.length());
@@ -478,6 +480,31 @@ public class AdminController {
     }
 
 
+    public void returnToMain(ActionEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/CrudAdmin.fxml"));
+            tableViews.getScene().setRoot(parent);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    public void stats(ActionEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/stats.fxml"));
+            tableViews.getScene().setRoot(parent);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void commande(ActionEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Commande.fxml"));
+            tableViews.getScene().setRoot(parent);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 

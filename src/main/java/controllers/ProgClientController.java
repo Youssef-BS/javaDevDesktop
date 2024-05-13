@@ -82,7 +82,7 @@ public class ProgClientController implements Initializable {
 
     public ObservableList<Program> programsGetData() {
         try {
-            List<Program> list = programService.recuperer();
+            List<Program> list = programService.recupererClientPrograms();
             cardListData = FXCollections.observableArrayList(list);
             return cardListData;
         } catch (SQLException e) {
@@ -160,20 +160,23 @@ public class ProgClientController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("You are already subscribed to this program!");
                 alert.showAndWait();
+            }else{
+                insertProgramForUser(idUserClient,chosenProgram.getId());
             }
             FXMLLoader load = new FXMLLoader();
             load.setLocation(getClass().getResource("/ExerciceClient.fxml"));
             Parent parent = load.load();
             ExerciceClientController exC = load.getController();
-            insertProgramForUser(idUserClient,chosenProgram.getId());
             exC.setProgram(chosenProgram);
             programTable.getScene().setRoot(parent);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
+
     public void insertProgramForUser(int userId, int programId) throws SQLException {
-        String sql = "INSERT INTO userprogram (userId, programId) VALUES (?, ?)";
+        String sql = "INSERT INTO inscription (user_id, program_id) VALUES (?, ?)";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setInt(1, userId);
             pstmt.setInt(2, programId);
@@ -190,7 +193,7 @@ public class ProgClientController implements Initializable {
     private boolean isUserSubscribed(int userId, int programId) {
 
         try {
-            String query = "SELECT * FROM userprogram WHERE userId = ? AND programId = ?";
+            String query = "SELECT * FROM inscription WHERE user_id = ? AND program_id = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, userId);
             statement.setInt(2, programId);
@@ -241,7 +244,7 @@ public class ProgClientController implements Initializable {
     @FXML
     void signout(MouseEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/welcome.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/UserInterface.fxml"));
             signout.getScene().setRoot(parent);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -251,10 +254,17 @@ public class ProgClientController implements Initializable {
     @FXML
     void gotoevenement(ActionEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/EvenClient.fxml"));
-            signout.getScene().setRoot(parent);
+            FXMLLoader load = new FXMLLoader();
+            load.setLocation(getClass().getResource("/EvenClient.fxml"));
+            Parent parent = load.load();
+            EvenClientController pcC = load.getController();
+            pcC.setIdUserClient(idUserClient);
+            programGridPane.getScene().setRoot(parent);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
+
     }
 }

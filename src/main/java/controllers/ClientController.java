@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import entities.PanierItem;
 
-import entities.ProductItemController;
+import controllers.ProductItemController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -102,15 +102,15 @@ public class ClientController {
 
     public void affiche(ActionEvent actionEvent) {
         gridPanes.getChildren().clear();
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
-            String selectQuery = "SELECT DISTINCT nomProduit, prixProduit, photoProduit FROM produit WHERE quantiteProduit > 0";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
+            String selectQuery = "SELECT DISTINCT nom_produit, prix_produit, photo_produit FROM produit WHERE quantite_produit > 0";
             try (PreparedStatement selectStatement = connection.prepareStatement(selectQuery);
                  ResultSet resultSet = selectStatement.executeQuery()) {
 
                 while (resultSet.next()) {
-                    String productName = resultSet.getString("nomProduit");
-                    String photoPath = resultSet.getString("photoProduit");
-                    Integer productPrice = resultSet.getInt("prixProduit");
+                    String productName = resultSet.getString("nom_produit");
+                    String photoPath = resultSet.getString("photo_produit");
+                    Integer productPrice = resultSet.getInt("prix_produit");
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/ProductItem.fxml"));
                     GridPane productItem = loader.load();
                     ProductItemController controller = loader.getController();
@@ -164,25 +164,25 @@ public class ClientController {
 
     public void searchProduct() {
         gridPanes.getChildren().clear();
-            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
                 String selectQuery;
                 if (prixabove50.isSelected()) {
-                    selectQuery = "SELECT distinct nomProduit, prixProduit, photoProduit FROM produit WHERE prixProduit >= 50";
+                    selectQuery = "SELECT distinct nom_produit, prix_produit, photo_produit FROM produit WHERE prix_produit >= 50";
                 }
                 else if (prixbelow50.isSelected()){
-                    selectQuery = "SELECT distinct nomProduit, prixProduit, photoProduit FROM produit WHERE prixProduit < 50";
+                    selectQuery = "SELECT distinct nom_produit, prix_produit, photo_produit FROM produit WHERE prix_produit < 50";
                 }
                 else {
-                    selectQuery = "SELECT distinct nomProduit, prixProduit, photoProduit FROM produit";
+                    selectQuery = "SELECT distinct nom_produit, prix_produit, photo_produit FROM produit";
                 }
                 try (PreparedStatement selectStatement = connection.prepareStatement(selectQuery);
                      ResultSet resultSet = selectStatement.executeQuery()) {
                     int row = 0;
                     int col = 0;
                         while (resultSet.next()) {
-                            String productName = resultSet.getString("nomProduit");
-                            String photoPath = resultSet.getString("photoProduit");
-                            Integer productPrice = resultSet.getInt("prixProduit");
+                            String productName = resultSet.getString("nom_produit");
+                            String photoPath = resultSet.getString("photo_produit");
+                            Integer productPrice = resultSet.getInt("prix_produit");
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ProductItem.fxml"));
                             GridPane productItem = loader.load();
                             ProductItemController controller = loader.getController();
@@ -211,7 +211,7 @@ public class ClientController {
         ObservableList<Integer> userId = FXCollections.observableArrayList();
 
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
             String query = "SELECT idUser FROM user";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -232,12 +232,12 @@ public class ClientController {
     private void productChoiceBox() {
         ObservableList<String> productName = FXCollections.observableArrayList();
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
-            String query = "SELECT DISTINCT nomProduit FROM produit";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
+            String query = "SELECT DISTINCT nom_produit FROM produit";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
-                    String nomProduit = resultSet.getString("nomProduit");
+                    String nomProduit = resultSet.getString("nom_produit");
                     productName.add(nomProduit);
                 }
             }
@@ -249,13 +249,13 @@ public class ClientController {
         choiceprod.setItems(productName);
     }
     private int getProductQuantity(int productId) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
-            String selectQuery = "SELECT quantiteProduit FROM produit WHERE idProduit = ?";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
+            String selectQuery = "SELECT quantite_produit FROM produit WHERE idProduit = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
                 preparedStatement.setInt(1, productId);
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     if (resultSet.next()) {
-                        return resultSet.getInt("quantiteProduit");
+                        return resultSet.getInt("quantite_produit");
                     }
                 }
             }
@@ -267,7 +267,7 @@ public class ClientController {
     }
     private int getExistingProductId(Integer idProduit) {
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
             String selectQuery = "SELECT idProduit FROM produit WHERE idProduit = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
                 preparedStatement.setInt(1, idProduit);
@@ -286,7 +286,7 @@ public class ClientController {
         return -1;
     }
     private void updateProductQuantity(int productId,String Query) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
             String updateQuery = Query;
             try (PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
                 preparedStatement.setInt(1, productId);
@@ -299,10 +299,11 @@ public class ClientController {
     }
     @FXML
     private void deleteProduct(ActionEvent actionEvent) {
-        Integer userId = (Integer) choiceid.getValue();
-        String Queryadd = "UPDATE produit SET quantiteProduit = quantiteProduit + 1 WHERE idProduit = ?";
-        if (userId != null) {
-            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        Integer userid = userId;
+
+        String Queryadd = "UPDATE produit SET quantite_produit = quantite_produit + 1 WHERE idProduit = ?";
+        if (userid != null) {
+            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
                 String query = "SELECT idProduit FROM produit WHERE idProduit = ?";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setInt(1, idProduit);
@@ -314,7 +315,7 @@ public class ClientController {
                                 /*showAlert("Product quantity updated successfully!");*/
                                 String deletequery = "DELETE FROM panier WHERE idUser = ? AND idPanier = ?";
                                 try (PreparedStatement insertStatement = connection.prepareStatement(deletequery)) {
-                                    insertStatement.setInt(1, userId);
+                                    insertStatement.setInt(1, userid);
                                     insertStatement.setInt(2,idPanier);
                                     insertStatement.executeUpdate();
                                     showAlert("Product deleted from the basket successfully!");
@@ -335,14 +336,19 @@ public class ClientController {
             System.out.println("Please select both a user and a product.");
         }
     }
+    private int userId;
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     public void addproduct(ActionEvent actionEvent) {
-        String Queryadd = "UPDATE produit SET quantiteProduit = quantiteProduit - 1 WHERE idProduit = ?";
-        Integer userId = (Integer) choiceid.getValue();
+        String Queryadd = "UPDATE produit SET quantite_produit = quantite_produit - 1 WHERE idProduit = ?";
+        //Integer userId = (Integer) choiceid.getValue();
         String productName = choiceprod.getValue().toString();
-        if (userId != null && productName != null) {
-            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
-                String query = "SELECT idProduit FROM produit WHERE nomProduit = ?";
+        if ( productName != null) {
+            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
+                String query = "SELECT idProduit FROM produit WHERE nom_produit = ?";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, productName);
                     try (ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -384,8 +390,8 @@ public class ClientController {
 
     public void affichepanier(Integer userId) {
         List<PanierItem> panierList = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
-            String selectQuery = "SELECT panier.idUser,panier.idPanier, produit.idProduit, produit.nomProduit, produit.prixProduit, panier.status " +
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
+            String selectQuery = "SELECT panier.idUser,panier.idPanier, produit.idProduit, produit.nom_produit, produit.prix_produit, panier.status " +
                     "FROM panier " +
                     "INNER JOIN produit ON panier.idProduit = produit.idProduit " +
                     "WHERE panier.idUser = ? AND panier.status = 0";
@@ -395,8 +401,8 @@ public class ClientController {
                     while (resultSet.next()) {
                         Integer idUser = resultSet.getInt("idUser");
                         Integer idProduit = resultSet.getInt("idProduit");
-                        String nomProduit = resultSet.getString("nomProduit");
-                        Integer prixProduit = resultSet.getInt("prixProduit");
+                        String nomProduit = resultSet.getString("nom_produit");
+                        Integer prixProduit = resultSet.getInt("prix_produit");
                         Integer idPanier = resultSet.getInt("idPanier");
                         Integer status = resultSet.getInt("status");
                         total+=prixProduit;
@@ -415,9 +421,10 @@ public class ClientController {
     }
 
     public void affichepa(ActionEvent actionEvent) {
-        Integer selecteduserId = (Integer) choiceid.getValue();
-        if (selecteduserId != null) {
-            affichepanier(selecteduserId);
+        //Integer selecteduserId = (Integer) choiceid.getValue();
+
+        if (userId != 0) {
+            affichepanier(userId);
         } else {
             System.out.println("Please select a product ID to delete.");
         }
@@ -441,10 +448,10 @@ public class ClientController {
     }
 
     public void confirmcommande(ActionEvent actionEvent) {
-        Integer userId = (Integer) choiceid.getValue();
+        Integer userid = userId;
 
-        if (userId != null) {
-            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        if (userid != null) {
+            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
                 String insertQuery = "INSERT INTO commande (Total, idUser) VALUES (?,?)";
                 String updateQuery = "UPDATE panier SET status=1 WHERE idUser = ? ";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
@@ -477,15 +484,15 @@ public class ClientController {
 
 
     public void pdfex(ActionEvent actionEvent) {
-        Integer userId = (Integer) choiceid.getValue();
+        Integer userid = userId;
         String pdfFilePath = "panier_data.pdf";
 
         // Establish database connection
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
-            String selectQuery = "SELECT produit.nomProduit, produit.prixProduit, panier.idUser FROM panier INNER JOIN produit ON panier.idProduit = produit.idProduit WHERE panier.idUser = ? AND  panier.status = 0";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
+            String selectQuery = "SELECT produit.nom_produit, produit.prix_produit, panier.idUser FROM panier INNER JOIN produit ON panier.idProduit = produit.idProduit WHERE panier.idUser = ? AND  panier.status = 0";
             try (PreparedStatement statement = connection.prepareStatement(selectQuery)) {
                 // Set the value of the parameter marker (?)
-                statement.setInt(1, userId);
+                statement.setInt(1, userid);
                 try (PDDocument document = new PDDocument()) {
                     PDPage page = new PDPage();
                     document.addPage(page);
@@ -537,8 +544,8 @@ public class ClientController {
                                     newPage = true;
                                     break;
                                 }
-                                String nomProduit = resultSet.getString("nomProduit");
-                                double prixProduit = resultSet.getDouble("prixProduit");
+                                String nomProduit = resultSet.getString("nom_produit");
+                                double prixProduit = resultSet.getDouble("prix_produit");
                                 int idUser = resultSet.getInt("idUser");
 
                                 drawTableRow(contentStream, yPosition, rowHeight, cellMargin, tableWidth, new String[]{nomProduit, String.valueOf(prixProduit)});
@@ -620,7 +627,7 @@ public class ClientController {
     public void logout(){
         TokenManager.clearToken();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UserInterface.fxml"));
             Parent root = loader.load();
             totalLabel.getScene().setRoot(root);
         } catch (IOException e) {

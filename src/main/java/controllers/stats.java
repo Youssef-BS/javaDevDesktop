@@ -1,6 +1,8 @@
 package controllers;
 import java.io.IOException;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.chart.*;
 
 import java.sql.Connection;
@@ -37,11 +39,11 @@ public class stats {
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
-            String query = "SELECT nomProduit, SUM(quantiteProduit) AS totalQuantity FROM produit GROUP BY nomProduit";
+            String query = "SELECT nom_produit, SUM(quantite_produit) AS totalQuantity FROM produit GROUP BY nom_produit";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
-                    String productName = resultSet.getString("nomProduit");
+                    String productName = resultSet.getString("nom_produit");
                     int totalQuantity = resultSet.getInt("totalQuantity");
                     String label = productName + " (" + totalQuantity + ")";
                     pieChartData.add(new PieChart.Data(label, totalQuantity));
@@ -57,7 +59,7 @@ public class stats {
     private void populateUserPieChart() {
         ObservableList<PieChart.Data> userData = FXCollections.observableArrayList();
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
-            String query = "SELECT p.nomproduit, COUNT(*) AS count, pa.idProduit ,COUNT(*) AS totalQuantity " +
+            String query = "SELECT p.nom_produit, COUNT(*) AS count, pa.idProduit ,COUNT(*) AS totalQuantity " +
                     "FROM panier pa " +
                     "JOIN produit p ON pa.idProduit = p.idProduit " +
                     "WHERE pa.status = 1 "+
@@ -65,7 +67,7 @@ public class stats {
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
-                    String nomProduit = resultSet.getString("nomProduit");
+                    String nomProduit = resultSet.getString("nom_produit");
                     int count = resultSet.getInt("count");
                     int totalQuantity = resultSet.getInt("totalQuantity");
                     String label = nomProduit + " (" + totalQuantity + ")";
@@ -80,9 +82,12 @@ public class stats {
     }
 
 
-
-
-
-
-
+    public void ret(ActionEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/AdminProduct.fxml"));
+            main.getScene().setRoot(parent);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

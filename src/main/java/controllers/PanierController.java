@@ -35,9 +35,14 @@ public class PanierController {
         affiche(new ActionEvent());
 
     }
+    private int userId;
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
     public void affiche(ActionEvent actionEvent) {
         List<PanierItem> panierList = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
             String selectQuery = "SELECT idUser, idProduit FROM panier";
             try (PreparedStatement selectStatement = connection.prepareStatement(selectQuery);
                  ResultSet resultSet = selectStatement.executeQuery()) {

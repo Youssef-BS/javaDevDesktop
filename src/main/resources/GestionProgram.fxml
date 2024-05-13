@@ -16,40 +16,42 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="form_container" prefHeight="827.0" prefWidth="1303.0" styleClass="form_container" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProgramController">
-    <children>
+   <children>
       <AnchorPane layoutX="311.0" layoutY="90.0" prefHeight="350.0" prefWidth="934.0" styleClass="anchorTABLE">
          <children>
-              <TableView fx:id="table" layoutX="78.0" layoutY="11.0" onMouseClicked="#getData" prefHeight="329.0" prefWidth="779.0">
-                  <columns>
-                      <TableColumn fx:id="colId" prefWidth="75.0" text="id" />
-                      <TableColumn fx:id="colNom" prefWidth="121.0" text="Nom" />
-                      <TableColumn fx:id="colDescription" prefWidth="209.0" text="Description" />
-                      <TableColumn fx:id="colDuree" minWidth="7.0" prefWidth="150.0" text="Duree" />
-                      <TableColumn fx:id="colDeadline" minWidth="2.0" prefWidth="139.0" text="Deadline" />
-                      <TableColumn fx:id="colPrix" minWidth="9.0" prefWidth="84.0" text="Prix" />
-                  </columns>
-              </TableView>
-         </children></AnchorPane>
+            <TableView fx:id="table" layoutX="78.0" layoutY="11.0" onMouseClicked="#getData" prefHeight="329.0" prefWidth="779.0">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="75.0" text="id" />
+                  <TableColumn fx:id="colNom" prefWidth="121.0" text="Nom" />
+                  <TableColumn fx:id="colDescription" prefWidth="209.0" text="Description" />
+                  <TableColumn fx:id="colDuree" minWidth="7.0" prefWidth="150.0" text="Duree" />
+                  <TableColumn fx:id="colDeadline" minWidth="2.0" prefWidth="139.0" text="Deadline" />
+                  <TableColumn fx:id="colPrix" minWidth="9.0" prefWidth="84.0" text="Prix" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
       <AnchorPane layoutX="351.0" layoutY="466.0" prefHeight="319.0" prefWidth="858.0" styleClass="anchorTABLE">
          <children>
             <Button fx:id="clientBtn" layoutX="10.0" layoutY="225.0" mnemonicParsing="false" onAction="#gotoClient" text="Client" />
-                <TextField fx:id="tNom" layoutX="33.0" layoutY="14.0" promptText="Nom programme" />
-                <TextField fx:id="tDescription" layoutX="223.0" layoutY="14.0" promptText="Description" />
-                <TextField fx:id="tDuree" layoutX="414.0" layoutY="15.0" promptText="Durée" />
-                <TextField fx:id="tPrix" layoutX="353.0" layoutY="83.0" promptText="Prix" />
-                <DatePicker fx:id="tDeadline" layoutX="33.0" layoutY="83.0" prefHeight="32.0" prefWidth="284.0" promptText="Deadline" />
-              <ButtonBar layoutX="174.0" layoutY="228.0" prefHeight="63.0" prefWidth="480.0">
-                  <buttons>
-                      <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#createProgram" prefHeight="34.0" prefWidth="133.0" styleClass="btnPlay" text="Ajouter" textFill="WHITE">
+            <TextField fx:id="tNom" layoutX="33.0" layoutY="14.0" promptText="Nom programme" />
+            <TextField fx:id="tDescription" layoutX="223.0" layoutY="14.0" promptText="Description" />
+            <TextField fx:id="tDuree" layoutX="414.0" layoutY="15.0" promptText="Durée" />
+            <TextField fx:id="tPrix" layoutX="353.0" layoutY="83.0" promptText="Prix" />
+            <DatePicker fx:id="tDeadline" layoutX="33.0" layoutY="83.0" prefHeight="32.0" prefWidth="284.0" promptText="Deadline" />
+            <ButtonBar layoutX="174.0" layoutY="228.0" prefHeight="63.0" prefWidth="480.0">
+               <buttons>
+                  <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#createProgram" prefHeight="34.0" prefWidth="133.0" styleClass="btnPlay" text="Ajouter" textFill="WHITE">
                      <stylesheets>
                         <URL value="@progcss.css" />
                         <URL value="@cardercice.css" />
-                     </stylesheets></Button>
-                      <Button fx:id="btnModifier" mnemonicParsing="false" onAction="#editProgram" prefHeight="34.0" prefWidth="185.0" text="Modifier" textFill="WHITE" />
-                      <Button fx:id="btnSupprimer" mnemonicParsing="false" onAction="#deleteProgram" prefHeight="33.0" prefWidth="143.0" styleClass="btnStop" stylesheets="@cardercice.css" text="Supprimer" textFill="WHITE" />
-                      <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clearFiealds" prefHeight="34.0" prefWidth="115.0" text="Clear" textFill="WHITE" />
-                  </buttons>
-              </ButtonBar>
+                     </stylesheets>
+                  </Button>
+                  <Button fx:id="btnModifier" mnemonicParsing="false" onAction="#editProgram" prefHeight="34.0" prefWidth="185.0" text="Modifier" textFill="WHITE" />
+                  <Button fx:id="btnSupprimer" mnemonicParsing="false" onAction="#deleteProgram" prefHeight="33.0" prefWidth="143.0" styleClass="btnStop" stylesheets="@cardercice.css" text="Supprimer" textFill="WHITE" />
+                  <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clearFiealds" prefHeight="34.0" prefWidth="115.0" text="Clear" textFill="WHITE" />
+               </buttons>
+            </ButtonBar>
             <AnchorPane layoutX="664.0" layoutY="19.0" prefHeight="120.0" prefWidth="154.0" style="-fx-border-color: #145374;">
                <children>
                   <ImageView fx:id="imgview" fitHeight="120.0" fitWidth="154.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
@@ -60,7 +62,9 @@
                   <Font name="Calibri" size="12.0" />
                </font>
             </Button>
-         </children></AnchorPane>
+            <Button layoutX="690.0" layoutY="202.0" mnemonicParsing="false" onAction="#updatePic" text="Update pic" />
+         </children>
+      </AnchorPane>
       <Label layoutX="317.0" layoutY="10.0" prefHeight="34.0" prefWidth="244.0" text="Gestion Programmes" textFill="#00334e">
          <font>
             <Font name="Bodoni MT" size="27.0" />
@@ -79,7 +83,8 @@
             </AnchorPane>
             <Button fx:id="gestionEvenement" mnemonicParsing="false" onAction="#goToEvenement" prefHeight="34.0" prefWidth="283.0" styleClass="eventgestionbtn" stylesheets="@style.css" text="Gestion Evenement" />
             <Button fx:id="btnExercice" mnemonicParsing="false" onAction="#gotoExercice" prefHeight="34.0" prefWidth="288.0" text="Gestion Exercice" />
-         </children></VBox>
+         </children>
+      </VBox>
       <TextField fx:id="searchField" layoutX="1031.0" layoutY="44.0" promptText="Chercher Programme" style="-fx-background-radius: 20;" />
       <Separator layoutX="328.0" layoutY="451.0" prefHeight="4.0" prefWidth="920.0" />
       <ImageView fx:id="signout" fitHeight="42.0" fitWidth="39.0" layoutX="1238.0" layoutY="762.0" onMouseClicked="#signout" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
@@ -87,5 +92,5 @@
             <Image url="@exit.png" />
          </image>
       </ImageView>
-    </children>
+   </children>
 </AnchorPane>

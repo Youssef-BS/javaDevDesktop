@@ -15,7 +15,7 @@
       <ScrollPane prefHeight="200.0" prefWidth="200.0" />
       <AnchorPane fx:id="main" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #145374;">
          <children>
-            <Button layoutX="45.0" layoutY="563.0" mnemonicParsing="false"  prefHeight="29.0" prefWidth="65.0" style="-fx-background-color: e8e8e8; -fx-background-radius: 10;" text="Return" textFill="#145374">
+            <Button layoutX="45.0" layoutY="563.0" mnemonicParsing="false" onAction="#ret" prefHeight="29.0" prefWidth="65.0" style="-fx-background-color: e8e8e8; -fx-background-radius: 10;" text="Return" textFill="#145374">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>

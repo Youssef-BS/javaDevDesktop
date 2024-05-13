@@ -59,7 +59,7 @@
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="last" layoutX="57.0" layoutY="587.0" mnemonicParsing="false"  prefHeight="36.0" prefWidth="70.0" text="Return" textFill="#e8e8e8">
+            <Button fx:id="last" layoutX="57.0" layoutY="587.0" mnemonicParsing="false" onAction="#ret" prefHeight="36.0" prefWidth="70.0" text="Return" textFill="#e8e8e8">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>

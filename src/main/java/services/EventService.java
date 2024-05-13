@@ -49,7 +49,7 @@ public class EventService implements IService<Event>{
 
     @Override
     public void ajouter(Event event) throws SQLException {
-        String sql = "INSERT INTO event (nom, description, duree, type, date_debut, nb_participants, nb_max, localisation, status, idProgramme) " +
+        String sql = "INSERT INTO event (nom, description, duree, type, date_debut, nb_participants, nb_max, localisation, status, program_id) " +
                 "VALUES ('" + event.getNom() + "', '" + event.getDescription() + "', '" + event.getDuree() + "', '" + event.getType() + "', '" +
                 event.getDate_debut() + "', '" + event.getNb_participants() + "', '" + event.getNb_max() + "', '" + event.getLocalisation() + "', '" +
                 event.getStatus() + "', '" + event.getIdProgramme() + "')";
@@ -62,7 +62,7 @@ public class EventService implements IService<Event>{
 
     @Override
     public void modifier(Event event) throws SQLException {
-        String sql = "UPDATE event set nom = ?,description = ?,duree = ?,type = ?,date_debut = ?,nb_max = ?, localisation = ?, status = ?, idProgramme = ? where id = ?";
+        String sql = "UPDATE event set nom = ?,description = ?,duree = ?,type = ?,date_debut = ?,nb_max = ?, localisation = ?, status = ?, program_id = ? where id = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, event.getNom());
         ps.setString(2, event.getDescription());
@@ -158,6 +158,31 @@ public class EventService implements IService<Event>{
             System.out.println("Event not found for id: " + id);
         }
 
+    }
+
+    public List<Event> fetchParticipatedEvents(int userId) throws SQLException {
+        List<Event> participatedEvents = new ArrayList<>();
+
+
+
+        String query = "SELECT e.id, e.nom, e.description, e.duree " +
+                "FROM participation p " +
+                "JOIN event e ON p.event_id = e.id " +
+                "WHERE p.user_id = ?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, userId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            Event ev = new Event();
+            ev.setId(resultSet.getInt("id"));
+            ev.setNom(resultSet.getString("nom"));
+            ev.setDescription(resultSet.getString("description"));
+            ev.setDuree(resultSet.getString("duree"));
+            participatedEvents.add(ev);
+        }
+
+        return participatedEvents;
     }
 
     }

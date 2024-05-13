@@ -16,14 +16,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="827.0" prefWidth="1303.0" styleClass="form_container" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EventController">
+<AnchorPane prefHeight="782.0" prefWidth="1282.0" styleClass="form_container" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EventController">
    <children>
       <AnchorPane layoutX="311.0" layoutY="90.0" prefHeight="350.0" prefWidth="934.0" styleClass="anchorTABLE">
          <children>
             <TableView fx:id="table" layoutX="78.0" layoutY="11.0" onMouseClicked="#getData" prefHeight="329.0" prefWidth="779.0">
-              <columns>
-                <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
-                <TableColumn fx:id="colNom" prefWidth="69.0" text="Nom" />
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
+                  <TableColumn fx:id="colNom" prefWidth="69.0" text="Nom" />
                   <TableColumn fx:id="colDescription" prefWidth="91.0" text="Description" />
                   <TableColumn fx:id="colDuree" prefWidth="65.0" text="Durée" />
                   <TableColumn fx:id="colType" prefWidth="75.0" text="Type" />
@@ -32,9 +32,10 @@
                   <TableColumn fx:id="colMax" prefWidth="40.0" text="Max" />
                   <TableColumn fx:id="colLocalisation" prefWidth="93.0" text="Localisation" />
                   <TableColumn fx:id="colStatus" prefWidth="70.0" text="status" />
-              </columns>
+               </columns>
             </TableView>
-         </children></AnchorPane>
+         </children>
+      </AnchorPane>
       <Label layoutX="317.0" layoutY="10.0" prefHeight="34.0" prefWidth="244.0" text="Gestion Evènements" textFill="#00334e">
          <font>
             <Font name="Bodoni MT" size="27.0" />
@@ -51,7 +52,8 @@
                   <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clearFiealds" prefHeight="34.0" prefWidth="115.0" text="Clear" textFill="WHITE" />
                </buttons>
             </ButtonBar>
-         </children></AnchorPane>
+         </children>
+      </AnchorPane>
       <TextField fx:id="tNom" layoutX="395.0" layoutY="493.0" promptText="Nom evenement" />
       <TextField fx:id="tDescription" layoutX="395.0" layoutY="551.0" promptText="Description" />
       <TextField fx:id="tDuree" layoutX="395.0" layoutY="609.0" promptText="Durée" />
@@ -73,7 +75,8 @@
                </children>
             </AnchorPane>
             <Button fx:id="gestionProgramme" mnemonicParsing="false" onAction="#goToProgramme" prefHeight="34.0" prefWidth="402.0" text="Gestion Programmes" />
-         </children></VBox>
+         </children>
+      </VBox>
       <TextField fx:id="searchField" layoutX="1031.0" layoutY="44.0" promptText="Chercher Evenement" style="-fx-background-radius: 20;" />
       <Separator layoutX="328.0" layoutY="451.0" prefHeight="4.0" prefWidth="920.0" />
       <ImageView fx:id="signout" fitHeight="42.0" fitWidth="39.0" layoutX="1238.0" layoutY="762.0" onMouseClicked="#signout" pickOnBounds="true" preserveRatio="true" styleClass="shadow">

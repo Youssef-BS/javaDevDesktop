@@ -75,8 +75,6 @@ import java.util.Map;
 
 
 
-
-
 public class ReclamationController {
 
 
@@ -649,6 +647,18 @@ public void afficherFormulaireReponse(){
         alert.showAndWait();
     }
 
+
+    @FXML
+    public void returnToMain(){
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CrudAdmin.fxml"));
+            Parent root = loader.load();
+            repTF.getScene().setRoot(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }
 

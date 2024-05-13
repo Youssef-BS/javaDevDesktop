@@ -296,7 +296,9 @@ public class CrudUsersControllors  implements Initializable {
         userGridPane.getChildren().clear();
         int maxColumns = 3;
         Insets userMargin = new Insets(30);
+        int s=0 ;
         for (int i = 0; i < users.size(); i++) {
+            s++;
             Button btnDelete = new Button();
             Button FetchUser = new Button();
             btnDelete.setText("Delete");
@@ -327,6 +329,7 @@ public class CrudUsersControllors  implements Initializable {
             ColumnConstraints colConstraints = new ColumnConstraints();
             colConstraints.setHgrow(Priority.ALWAYS);
             userGridPane.getColumnConstraints().add(colConstraints);
+
         }
     }
 
@@ -577,7 +580,7 @@ public class CrudUsersControllors  implements Initializable {
     @FXML
     public void switchReclamation() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ajoutrec.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterReclamation.fxml"));
             Parent root = loader.load();
             prix.getScene().setRoot(root);
         } catch (IOException e) {

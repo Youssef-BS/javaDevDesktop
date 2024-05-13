@@ -1,5 +1,6 @@
-package entities;
+package controllers;
 
+import entities.ProductController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;

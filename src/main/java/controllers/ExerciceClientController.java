@@ -33,7 +33,7 @@ public class ExerciceClientController implements Initializable {
 
     public void setProgram(Program program) {
         this.program = program;
-        displayExerciceCrds();
+       //displayExerciceCrds();
     }
 
     @FXML
@@ -42,7 +42,8 @@ public class ExerciceClientController implements Initializable {
     private ObservableList<Exercice> cardListData = FXCollections.observableArrayList();
     public ObservableList<Exercice> exercicesGetData(){
         try {
-            List<Exercice> list = exerciceService.recuperer(program.getId());
+            List<Exercice> list = exerciceService.recuperer();
+            System.out.println(list);
             cardListData = FXCollections.observableArrayList(list);
             return cardListData;
         }catch(SQLException e)
@@ -99,6 +100,6 @@ public class ExerciceClientController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        displayExerciceCrds();
     }
 }

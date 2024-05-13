@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import midlleware.TokenManager;
 import services.GymService;
 
 import java.awt.event.ActionEvent;
@@ -99,7 +100,7 @@ public class AfficherGymController implements Initializable {
                 String photo = Gym.getPhotoGym();
                 String nom = Gym.getNomGym();
                 String adresse = Gym.getAdresse();
-                Image imageP = new Image("file:C:///Users//youssef//Desktop//PI//image//image//" + photo);
+                Image imageP = new Image("file:C:///Users//youssef//Desktop//PI//src//main//image//" + photo);
                 ImageView imageView = new ImageView(imageP);
                 imageView.setFitHeight(150);
                 imageView.setFitWidth(150);
@@ -304,5 +305,16 @@ public class AfficherGymController implements Initializable {
     public void handleButtonAction(javafx.event.ActionEvent actionEvent) {
         search();
         quitter();
+    }
+
+    @FXML
+    public void returnToMain(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CrudAdmin.fxml"));
+            Parent root = loader.load();
+            gymsFX.getScene().setRoot(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

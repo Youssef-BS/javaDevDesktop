@@ -87,9 +87,9 @@ public class cardExerciceController {
                 lblDuration.setText("Duration: 00 / " + (int)media.getDuration().toSeconds());
             });
 
-            Scene scene = mediaView.getScene();
+            /*Scene scene = mediaView.getScene();
             mediaView.fitWidthProperty().bind(scene.widthProperty());
-            mediaView.fitHeightProperty().bind(scene.heightProperty());
+            mediaView.fitHeightProperty().bind(scene.heightProperty());*/
 
             //mediaPlayer.setAutoPlay(true);
 

@@ -108,5 +108,6 @@
       <ComboBox fx:id="idUserComboBox" layoutX="370.0" layoutY="366.0" prefHeight="26.0" prefWidth="176.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #145374; -fx-background-radius: 50px;" />
       <Button layoutX="505.0" layoutY="445.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="42.0" prefWidth="120.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="Ajouter" />
       <Button layoutX="316.0" layoutY="445.0" mnemonicParsing="false" onAction="#afficherrec" prefHeight="42.0" prefWidth="120.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50px;" text="afficher" />
+      <Button layoutX="611.0" layoutY="37.0" mnemonicParsing="false" onAction="#returnToMain" text="retourn" />
    </children>
 </AnchorPane>

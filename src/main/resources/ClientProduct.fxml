@@ -67,7 +67,6 @@
                                     <Font name="System Bold" size="13.0" />
                                  </font></RadioButton>
                               <ChoiceBox fx:id="choiceprod" layoutX="62.0" layoutY="178.0" onMousePressed="#productChoiceBox" prefWidth="150.0" />
-                              <ChoiceBox fx:id="choiceid" layoutX="62.0" layoutY="217.0" onMousePressed="#idChoiceBox" prefWidth="150.0" />
                               <Button fx:id="add" layoutX="89.0" layoutY="261.0" mnemonicParsing="false" onAction="#addproduct" prefHeight="25.0" prefWidth="106.0" text="Add to basket " textFill="#00334e">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />

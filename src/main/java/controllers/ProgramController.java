@@ -219,9 +219,11 @@ public class ProgramController implements Initializable {
 
     @FXML
     void editProgram(ActionEvent event) {
+        String path = Program.path;
+        path.replace("\\", "\\\\");
         try {
             programService.modifier(new Program( id,tNom.getText(),tDescription.getText(), tDuree.getText(), tDeadline.getValue()
-                    ,Float.parseFloat(tPrix.getText()),""));
+                    ,Float.parseFloat(tPrix.getText()),path));
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information");
             alert.setContentText("Programme modifié avec succès");
@@ -280,6 +282,7 @@ public class ProgramController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
     @FXML
     void importer(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
@@ -293,6 +296,20 @@ public class ProgramController implements Initializable {
 
         }
 
+    }
+
+    @FXML
+    void updatePic(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg"));
+        File file = fileChooser.showOpenDialog(form_container.getScene().getWindow());
+
+        if(file != null){
+            Program.path = file.getAbsolutePath();
+            image = new Image(file.toURI().toString(),154,120,false,true);
+            imgview.setImage(image);
+
+        }
     }
     @FXML
     void gotoExercice(ActionEvent event) {
@@ -318,13 +335,13 @@ public class ProgramController implements Initializable {
 
     @FXML
     void signout(MouseEvent event) {
+
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/welcome.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/CrudAdmin.fxml"));
             table.getScene().setRoot(parent);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
 
 }

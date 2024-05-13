@@ -42,7 +42,6 @@
             <children>
                <VBox alignment="TOP_CENTER" layoutX="40.0" layoutY="70.0" spacing="20.0">
                   <children>
-                        <Button mnemonicParsing="false" onAction="#ajouterec" prefHeight="42.0" prefWidth="182.0" style="-fx-background-radius: 50px; -fx-background-color: #00334E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;" text="Ajouter" textFill="WHITE" />
                         <Button mnemonicParsing="false" onAction="#modifier" prefHeight="42.0" prefWidth="182.0" style="-fx-background-radius: 50px; -fx-background-color: #00334E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;" text="Gerer reclamation" textFill="WHITE" />
                      <Button fx:id="generateQRCodeButton" mnemonicParsing="false" onAction="#generateQRCodeAction" prefHeight="42.0" prefWidth="182.0" style="-fx-background-radius: 50px; -fx-background-color: #00334E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;" text="Qr code" textFill="WHITE" />
                      <Button mnemonicParsing="false" onAction="#listerep" prefHeight="42.0" prefWidth="182.0" style="-fx-background-radius: 50px; -fx-background-color: #00334E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;" text="Liste Reponse" textFill="WHITE" />
@@ -139,6 +138,7 @@
                <Image url="@encour.png" />
             </image>
          </ImageView>
+         <Button layoutX="245.0" layoutY="46.0" mnemonicParsing="false" onAction="#returnToMain" text="return" />
         
 
 

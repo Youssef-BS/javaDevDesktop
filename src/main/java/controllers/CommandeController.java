@@ -3,6 +3,8 @@ package controllers;
 import entities.CommandeItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -61,7 +63,7 @@ public class CommandeController {
 
 
     private String getUserEmail(int userID) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
             String selectQuery = "SELECT email FROM user WHERE idUser = ?";
             try (PreparedStatement selectStatement = connection.prepareStatement(selectQuery)) {
                 selectStatement.setInt(1, userID);
@@ -175,7 +177,7 @@ public class CommandeController {
 
     }
     public void delete() {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
             String updateQuery = "UPDATE commande SET commandeSt = 1 WHERE idCommande = ? ";
             try (PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
                 preparedStatement.setInt(1, idCommande);
@@ -204,7 +206,7 @@ public class CommandeController {
     public void affiche(ActionEvent actionEvent) {
         List<CommandeItem> CommandeList = new ArrayList<>();
         try (
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi", "root", "")) {
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pifinal", "root", "")) {
             String selectQuery = "SELECT commande.idCommande, commande.Total, commande.commandeSt, user.idUser, user.nom, user.prenom, user.email, user.phoneNumber " +
                     "FROM commande " +
                     "INNER JOIN user ON commande.idUser = user.idUser " +
@@ -232,7 +234,12 @@ public class CommandeController {
     }
 
 
-
-
-
+    public void ret(ActionEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/AdminProduct.fxml"));
+            tableViews.getScene().setRoot(parent);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

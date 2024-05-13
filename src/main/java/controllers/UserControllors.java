@@ -254,8 +254,11 @@ public class UserControllors implements Initializable {
     @FXML
     public void switchProduct() {
         try {
+            int idUser = TokenManager.decodeId();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClientProduct.fxml"));
             Parent root = loader.load();
+            ClientController pcC = loader.getController();
+            pcC.setUserId(idUser);
             buy.getScene().setRoot(root);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -265,8 +268,11 @@ public class UserControllors implements Initializable {
     @FXML
     public void switchProg() {
         try {
+            int idUser = TokenManager.decodeId();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ProgClient.fxml"));
             Parent root = loader.load();
+            ProgClientController pcC = loader.getController();
+            pcC.setIdUserClient(idUser);
             buy.getScene().setRoot(root);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -276,7 +282,7 @@ public class UserControllors implements Initializable {
     @FXML
     public void switchRec() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterReclamation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ajoutrec.fxml"));
             Parent root = loader.load();
             buy.getScene().setRoot(root);
         } catch (IOException e) {
@@ -306,7 +312,18 @@ public class UserControllors implements Initializable {
 //        }
 //    }
 
+@FXML
+    public void returnToMain(){
 
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UserInterface.fxml"));
+            Parent root = loader.load();
+            buy.getScene().setRoot(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
 
 
